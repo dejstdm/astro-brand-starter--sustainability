@@ -1,0 +1,13 @@
+/* Webfont: LaysExtraBold */@font-face {
+    font-family: 'LaysExtraBold';
+    src: url('LaysExtraBold.eot'); /* IE9 Compat Modes */
+    src: url('LaysExtraBold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('LaysExtraBold.woff2') format('woff2'), /* Modern Browsers */
+         url('LaysExtraBold.woff') format('woff'), /* Modern Browsers */
+         url('LaysExtraBold.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('LaysExtraBold.svg#LaysExtraBold') format('svg'); /* Legacy iOS */
+    font-style: normal;
+    font-weight: normal;
+    text-rendering: optimizeLegibility;
+}
+
