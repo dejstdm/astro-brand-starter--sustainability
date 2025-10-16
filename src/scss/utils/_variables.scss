@@ -9,6 +9,46 @@ $xl: 1200px;
 $xxl: 1400px;
 
 // ==========================================================================
-// Color Palette
+// Container Widths
+// ==========================================================================
+$sus-container: 950px;
+$sus-container-wide: 1080px;
+
+// ==========================================================================
+// CSS Variables for Lipton Sustainability Colors (from Figma)
 // ==========================================================================
 
+
+
+.sus-body {
+    // Base Colors
+    --sus-color-white: #FFFFFF;
+    
+    // Primary Colors
+    --sus-color-primary: #233976; // Dark Purple
+    --sus-color-secondary: #F7DB17; // Lipton Yellow
+    --sus-color-sky-blue: #4790DC; // Sky Blue
+
+    // Hover Colors
+    --sus-color-hover-primary: #1b2d5e; // Dark Purple
+    --sus-color-hover-secondary: rgb(232, 225, 16); // Lipton Yellow
+    --sus-color-hover-sky-blue: #3874b5; // Sky Blue
+    
+    // Text Colors
+    --sus-color-text-primary: #233976; // Dark Purple for primary text
+    --sus-color-text-secondary: #FFFFFF; // White for secondary text
+    
+    // Background Colors
+    --sus-color-bg-primary: #FFFFFF; // White background
+    --sus-color-bg-secondary: #4790DC; // Sky Blue background
+    // Font families (using existing fonts from public/fonts/)
+    --sus-font-primary: 'Intro Lipton', 'Arial', sans-serif;
+    --sus-font-highlight: 'Lipton-Highlight-Clean', 'Arial', sans-serif;
+    
+    // Font weights
+    --sus-font-weight-regular: 450;
+    --sus-font-weight-semibold: 550;
+    --sus-font-weight-bold: 650;
+    --sus-font-weight-black: 800;
+    --sus-font-weight-light: 300;
+}
