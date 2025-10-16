@@ -7,7 +7,7 @@
 // --------------------------------------------------------------------------------
 @font-face {
 	font-family: 'Lipton-Highlight-Clean';
-	src: url('../fonts/Lipton-Highlight-Clean/LiptonHighlight-Clean.woff2') format('woff2');
+	src: url('/fonts/Lipton-Highlight-Clean/LiptonHighlight-Clean.woff2') format('woff2');
 	font-weight: 300;
 	font-style: normal;
 	font-display: swap;
@@ -19,9 +19,9 @@
 	font-family: 'Intro Lipton';
 	font-weight: 800;
 	font-style: normal;
-	src: url('../fonts/intro-lipton/IntroLipton-Black.otf') format('opentype'),
-	url('../fonts/intro-lipton/IntroLipton-Black.woff2') format('woff2'),
-	url('../fonts/intro-lipton/IntroLipton-Black.woff') format('woff');
+	src: url('/fonts/intro-lipton/IntroLipton-Black.otf') format('opentype'),
+	url('/fonts/intro-lipton/IntroLipton-Black.woff2') format('woff2'),
+	url('/fonts/intro-lipton/IntroLipton-Black.woff') format('woff');
 	font-display: swap;
 }
 
@@ -29,9 +29,9 @@
 	font-family: 'Intro Lipton';
 	font-weight: 650;
 	font-style: normal;
-	src: url('../fonts/intro-lipton/IntroLipton-Bold.otf') format('opentype'),
-	url('../fonts/intro-lipton/IntroLipton-Bold.woff2') format('woff2'),
-	url('../fonts/intro-lipton/IntroLipton-Bold.woff') format('woff');
+	src: url('/fonts/intro-lipton/IntroLipton-Bold.otf') format('opentype'),
+	url('/fonts/intro-lipton/IntroLipton-Bold.woff2') format('woff2'),
+	url('/fonts/intro-lipton/IntroLipton-Bold.woff') format('woff');
 	font-display: swap;
 }
 
@@ -39,9 +39,9 @@
 	font-family: 'Intro Lipton';
 	font-weight: 550;
 	font-style: normal;
-	src: url('../fonts/intro-lipton/IntroLipton-SemiBold.otf') format('opentype'),
-	url('../fonts/intro-lipton/IntroLipton-SemiBold.woff2') format('woff2'),
-	url('../fonts/intro-lipton/IntroLipton-SemiBold.woff') format('woff');
+	src: url('/fonts/intro-lipton/IntroLipton-SemiBold.otf') format('opentype'),
+	url('/fonts/intro-lipton/IntroLipton-SemiBold.woff2') format('woff2'),
+	url('/fonts/intro-lipton/IntroLipton-SemiBold.woff') format('woff');
 	font-display: swap;
 }
 
@@ -49,8 +49,8 @@
 	font-family: 'Intro Lipton';
 	font-weight: 450;
 	font-style: normal;
-	src: url('../fonts/intro-lipton/IntroLipton-Regular.otf') format('opentype'),
-	url('../fonts/intro-lipton/IntroLipton-Regular.woff2') format('woff2'),
-	url('../fonts/intro-lipton/IntroLipton-Regular.woff') format('woff');
+	src: url('/fonts/intro-lipton/IntroLipton-Regular.otf') format('opentype'),
+	url('/fonts/intro-lipton/IntroLipton-Regular.woff2') format('woff2'),
+	url('/fonts/intro-lipton/IntroLipton-Regular.woff') format('woff');
 	font-display: swap;
 }

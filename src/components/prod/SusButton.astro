@@ -1,0 +1,48 @@
+---
+export interface Props {
+  variant?: 'primary' | 'secondary';
+  size?: 'small' | 'medium' | 'large';
+  icon?: string;
+  text: string;
+  href?: string;
+  disabled?: boolean;
+  class?: string;
+}
+
+const { 
+  variant = 'primary', 
+  size = 'medium', 
+  icon, 
+  text, 
+  href, 
+  disabled = false,
+  class: className = ''
+} = Astro.props;
+
+const buttonClass = `sus-button sus-button--${variant} ${size !== 'medium' ? `sus-button--${size}` : ''} ${className}`.trim();
+---
+
+{href ? (
+  <a href={href} class={buttonClass} data-disabled={disabled}>
+    <span class="sus-button__inner">
+      {icon && (
+        <span class="sus-button__icon">
+          <img src={`/images/${icon}`} alt="" />
+        </span>
+        )}
+        <span class="sus-button__text">{text}</span>
+      </span>
+    </a>
+    ) : (
+    <button class={buttonClass} disabled={disabled}>
+      <span class="sus-button__inner">    
+        {icon && (
+          <span class="sus-button__icon">
+            <img src={`/images/${icon}`} alt="" />
+          </span>
+          )}
+          <span class="sus-button__text">{text}</span>
+        </span>
+      </button>
+      )}
+      

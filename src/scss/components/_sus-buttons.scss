@@ -1,0 +1,172 @@
+// ==========================================================================
+// Sustainability Button Design System (from Figma)
+// ==========================================================================
+@use "../utils/variables" as *;
+
+// ==========================================================================
+// Base Button Styles
+// ==========================================================================
+
+.sus-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 6px 50px;
+  // height: 53px;
+  min-width: 290px;
+  background-color: var(--sus-color-secondary); // Lipton Yellow #F7DB17
+  border: none;
+  border-radius: 30px;
+  font-family: var(--sus-font-primary);
+  font-size: 21px;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--sus-color-primary); // Dark Purple #233976
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  max-width: 100%;
+  
+  &:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+    background-color: var(--sus-color-hover-secondary);
+  }
+  
+  &:active {
+    transform: translateY(0);
+  }
+  
+  &:focus {
+    outline: 2px solid var(--sus-color-primary);
+    background-color: var(--sus-color-hover-secondary);
+    outline-offset: 2px;
+  }
+}
+
+.sus-button__inner {
+  display: grid;
+  grid-template-columns: 42px  150px;
+  align-items: center;
+  justify-items: center;
+}
+// ==========================================================================
+// Button Icon
+// ==========================================================================
+
+.sus-button__icon {
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  display: block;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+
+// ==========================================================================
+// Button Text
+// ==========================================================================
+
+.sus-button__text {
+  font-family: var(--sus-font-primary);
+  font-size: 21px;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--sus-color-primary);
+  text-transform: uppercase;
+}
+
+// ==========================================================================
+// Button Variants
+// ==========================================================================
+
+// Primary Button (Yellow background, Dark Purple text)
+.sus-button--primary {
+  background-color: var(--sus-color-secondary);
+  color: var(--sus-color-primary);
+  
+  .sus-button__text {
+    color: var(--sus-color-primary);
+  }
+}
+
+// Secondary Button (Dark Purple background, White text)
+.sus-button--secondary {
+  background-color: var(--sus-color-primary);
+  color: var(--sus-color-white);
+  
+  .sus-button__text {
+    color: var(--sus-color-white);
+  }
+  
+  &:hover {
+    background-color: var(--sus-color-sky-blue);
+  }
+}
+
+// ==========================================================================
+// Button Sizes
+// ==========================================================================
+
+.sus-button--small {
+  height: 40px;
+  min-width: 200px;
+  padding: 12px 24px;
+  font-size: 18px;
+  
+  .sus-button__icon {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+.sus-button--large {
+  height: 60px;
+  min-width: 320px;
+  padding: 20px 40px;
+  font-size: 24px;
+  
+  .sus-button__icon {
+    width: 48px;
+    height: 48px;
+  }
+}
+
+// ==========================================================================
+// Button States
+// ==========================================================================
+
+.sus-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+  
+  &:hover {
+    transform: none;
+    opacity: 0.5;
+  }
+}
+
+// ==========================================================================
+// Button Group (for multiple buttons)
+// ==========================================================================
+
+.sus-button-group {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: column; // Mobile-first: column layout by default
+  
+  @media (min-width: $md) {
+    flex-direction: row; // Desktop: row layout
+  }
+  @media (min-width: $xl) {
+    justify-content: space-between ;
+  }
+}

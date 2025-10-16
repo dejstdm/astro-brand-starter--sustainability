@@ -21,7 +21,12 @@ src/scss/
 ```
 
 ## Container Rules
-**CRITICAL:** Sustainability containers must NEVER be nested inside other containers of any type. Each container variant (`.sus-container`, `.sus-container--nav`, `.sus-container-fluid`, `.sus-container-sec-header`) is a standalone layout element with its own padding and max-width. Use separate sibling containers instead of nesting them.
+**CRITICAL:** Sustainability containers must NEVER be nested inside other containers of any type. Each container variant (`.sus-container`, `.sus-container-wide`, `.sus-container-full`) is a standalone layout element with its own padding and max-width. Use separate sibling containers instead of nesting them.
+
+### Available Containers
+- **`.sus-container`** - Default container (950px inner width + 20px padding on each side)
+- **`.sus-container-wide`** - Wide container (1080px inner width + 20px padding on each side)  
+- **`.sus-container-full`** - Full container (full width, no padding)
 
 ## Import Order
 `main.scss` must load utilities first, then base, layout, and finally components:
@@ -49,7 +54,7 @@ Maintain this sequence so variables and mixins are available before they are use
 - Every component stylesheet imports variables: `@use "../utils/variables" as *;`
 - Scope selectors to the component block with "sus-" prefix (`.sus-hero`, `.sus-testimonial`, etc.).
 - Use BEM naming with double underscores for elements and double hyphens for modifiers.
-- Keep responsive rules mobile-first with `@media (min-width: $breakpoint)` queries from `_variables.scss`.
+- **CRITICAL: ALL styles must be mobile-first!** Start with mobile styles, then use `@media (min-width: $breakpoint)` queries to enhance for larger screens. NEVER use `max-width` media queries.
 - Do NOT add `background-color` to component stylesheets. Use the `sus-page-sec--bg-white` or `sus-page-sec--bg-gray` modifiers in the component markup instead.
 - Add the file to `main.scss` immediately after creation to ensure it is bundled.
 - All sustainability styles are isolated from main Lipton site using "sus-" prefix.

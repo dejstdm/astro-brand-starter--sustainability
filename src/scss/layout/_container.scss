@@ -3,8 +3,27 @@
 // ==========================================================================
 @use "../utils/variables" as *;
 
-.container {
-  
+// CRITICAL RULE: NEVER nest containers inside other containers!
+// Each container is a standalone layout element with its own padding and max-width.
+// Use separate sibling containers instead of nesting them.
+
+// Base container styles
+.sus-container {
+  width: 100%;
+  max-width: var(--sus-container);
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
-// container variants
+// Wide container (wider for nav elements and hero sections)
+.sus-container-wide {
+  width: 100%;
+  max-width: var(--sus-container-wide);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+// Full container (full width, no padding)
+.sus-container-full {
+  width: 100%;
+}

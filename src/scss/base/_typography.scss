@@ -8,14 +8,106 @@
 // ==========================================================================
 
 html {
-  
+  font-family: var(--sus-font-primary);
 }
 
 body {
- 
+  font-family: var(--sus-font-primary);
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--sus-color-text-primary);
 }
 
 // ==========================================================================
-// Headlines
+// Headlines (Mobile-First from Figma)
 // ==========================================================================
+
+// Mobile Headlines (Base styles)
+.sus-headline-1 {
+  font-family: var(--sus-font-primary);
+  font-size: 48px; // Mobile: 48px
+  font-weight: 800;
+  line-height: 1;
+  
+  // Desktop override
+  @media (min-width: $md) {
+    font-size: 72px; // Desktop: 72px
+  }
+}
+
+.sus-headline-2 {
+  font-family: var(--sus-font-primary);
+  font-size: 36px; // Mobile: 36px
+  font-weight: 800;
+  line-height: 1;
+  
+  // Desktop override
+  @media (min-width: $md) {
+    font-size: 55px; // Desktop: 55px
+  }
+}
+
+.sus-headline-3 {
+  font-family: var(--sus-font-primary);
+  font-size: 24px; // Mobile: 24px
+  font-weight: 800;
+  line-height: 1.2;
+  
+  // Desktop override
+  @media (min-width: $md) {
+    font-size: 42px; // Desktop: 42px
+    line-height: 1;
+  }
+}
+
+.sus-headline-5 {
+  font-family: var(--sus-font-primary);
+  font-size: 24px; // Mobile: 24px
+  font-weight: 800;
+  line-height: 1.2;
+  
+  // Desktop override
+  @media (min-width: $md) {
+    font-size: 24px; // Desktop: 24px (same as mobile)
+  }
+}
+
+// ==========================================================================
+// Body Text (from Figma)
+// ==========================================================================
+
+.sus-body-big {
+  font-family: var(--sus-font-primary);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.sus-body-regular {
+  font-family: var(--sus-font-primary);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.sus-body-big-highlight {
+  font-family: var(--sus-font-primary);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.sus-body-cta-big {
+  font-family: var(--sus-font-primary);
+  font-size: 21px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.sus-body-label-big {
+  font-family: var(--sus-font-primary);
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 1;
+}
 

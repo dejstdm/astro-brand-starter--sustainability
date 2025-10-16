@@ -9,10 +9,9 @@ $xl: 1200px;
 $xxl: 1400px;
 
 // ==========================================================================
-// Container Widths
+// Container Widths (total width including padding)
 // ==========================================================================
-$sus-container: 950px;
-$sus-container-wide: 1080px;
+// These are defined as CSS variables in the .sus-body selector below
 
 // ==========================================================================
 // CSS Variables for Lipton Sustainability Colors (from Figma)
@@ -21,6 +20,10 @@ $sus-container-wide: 1080px;
 
 
 .sus-body {
+    // Container Widths (total width including padding)
+    --sus-container: 990px; // 950px inner + 40px padding
+    --sus-container-wide: 1120px; // 1080px inner + 40px padding
+    
     // Base Colors
     --sus-color-white: #FFFFFF;
     
