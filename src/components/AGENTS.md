@@ -2,9 +2,33 @@
 
 ## Directory Policy
 - All sustainability components reside in `src/components/prod/`.
-- Name files with "Sus" prefix in PascalCase (e.g., `SusHeroBanner.astro`, `SusImpactCard.astro`).
+- Name files with "Sus" prefix in PascalCase (e.g., `SusHero.astro`, `SusNavigation.astro`).
 - Keep component-specific assets close to the component; do not recreate `examples` or `dev` folders.
 - All components are isolated from the main Lipton site using "sus" prefix.
+
+## The 9 Sustainability Sections
+This project creates 9 core sustainability sections that will be used across the 4 pages:
+
+1. **SusHero** - Hero banner section with background image and main messaging
+2. **SusNavigation** - Navigation component for sustainability pages
+3. **SusHighlight** - Content highlight section with text and visual elements
+4. **SusMediaHighlight** - Media-focused section with images/videos and content
+5. **SusProductHighlight** - Product showcase section with product information
+6. **SusInfoBlock** - Information block with structured content
+7. **SusAchievements** - Achievements and statistics display
+8. **SusPartnership** - Partnership and collaboration showcase
+9. **SusVideoHighlight** - Video-focused section with embedded content
+
+Each section uses the `SusSectionV2` wrapper component and can have multiple variants/options to support different page layouts and content types.
+
+## Important Note About Figma Design
+The Figma design for this project is not created perfectly. Some things are overlooked:
+
+1. **Containers are not used in Figma but in code they are used** - The component structure with `SusSectionV2`, `sus-container`, and `sus-sec` classes must be respected even though it's not present in Figma.
+
+2. **Sections in Figma are not correctly named** - The actual section names in Figma don't match the 9 sustainability sections we need to create. Use the 9 section names defined above (SusHero, SusNavigation, etc.) rather than the Figma section names.
+
+3. **The 9 sections need to be created with help of Figma MCP** - Components should be based on the actual Figma design specifications, but adapt the naming and structure to match our component architecture.
 
 ## Image Organization
 - All images are manually exported from Figma directly to `public/images/` (no subdirectories).
