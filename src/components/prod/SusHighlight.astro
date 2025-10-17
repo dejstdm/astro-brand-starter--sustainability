@@ -1,0 +1,55 @@
+---
+import SusSectionV2 from './SusSectionV2.astro';
+
+export interface Props {
+  variant?: 'default';
+}
+
+const { variant = 'default' } = Astro.props;
+---
+
+<div class="sus-highlight">
+  
+  <div class="sus-highlight__image-section">
+    <img 
+      src="/images/lipton-web-intent-landing-factory-v1-1.png" 
+      alt="Lipton Tea Factory in Sri Lanka" 
+      class="sus-highlight__image"
+    />
+    <svg class="sus-highlight__image-taper" width="1512" height="25" viewBox="0 0 1512 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M1512.03 25V0H0L1512.03 25Z" fill="#233976"/>
+    </svg>
+  </div>
+
+  <SusSectionV2 background="primary" taper="top-right">
+    <div class="sus-highlight__content sus-sec">
+      
+      <div class="sus-container">
+        <div class="sus-highlight__text-wrapper sus-sec__content">
+          
+          <div class="sus-highlight__body">
+            <p class="sus-highlight__description">
+              That's why Lipton Ice Tea partners with the Rainforest Alliance to invest in tea farmers in Sri Lanka.
+              It's also why, at our Ceytea factory, we pioneer practices that shrink our environmental impact. And it's why we're increasing our use of recycled plastic in our plastic bottles.
+            </p>
+          </div>
+
+          <h2 class="sus-highlight__headline">
+            You'd expect nothing less from the world's number one tea brand.
+          </h2>
+
+          <div class="sus-highlight__logo">
+            <img 
+              src="/images/alliance-logo.png" 
+              alt="Rainforest Alliance" 
+              class="sus-highlight__logo-image"
+            />
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </SusSectionV2>
+
+</div>
