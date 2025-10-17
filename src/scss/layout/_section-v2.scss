@@ -1,0 +1,104 @@
+@use "../utils/variables" as *;
+
+// SusSectionV2 - Section wrapper with clip-path diagonal borders
+.sus-page-sec-v2 {
+  // CSS custom properties (must be declared before nested rules)
+  --taper-margin: -10px;
+  --taper-size: 10px;
+  position: relative;
+  width: 100%;
+  min-height: 200px;
+  z-index: 10;
+  @media (min-width: $sm) {
+    --taper-margin: -20px;
+    --taper-size: 20px;
+  }
+  @media (min-width: $md) {
+    --taper-margin: -50px;
+    --taper-size: 50px;
+  }
+
+  
+  // Background colors
+  &--bg-primary {
+    background-color: var(--sus-color-primary);
+    --sus-border-color: var(--sus-color-primary);
+  }
+  
+  &--bg-pink {
+    background-color: var(--sus-color-bg-pink);
+    --sus-border-color: var(--sus-color-bg-pink);
+  }
+  
+  &--bg-orange {
+    background-color: var(--sus-color-bg-orange);
+    --sus-border-color: var(--sus-color-bg-orange);
+  }
+  
+  &--bg-green {
+    background-color: var(--sus-color-bg-green);
+    --sus-border-color: var(--sus-color-bg-green);
+  }
+  
+  &--bg-yellow {
+    background-color: var(--sus-color-secondary);
+    --sus-border-color: var(--sus-color-secondary);
+  }
+  
+  &--bg-white {
+    background-color: var(--sus-color-white);
+    --sus-border-color: var(--sus-color-white);
+  }
+  
+  &--bg-image {
+    background-image: url('/images/bg-sky 2.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+   
+    --sus-border-color: transparent;
+  }
+   
+  
+  // Content area
+  &__content {
+    position: relative;
+    padding: var(--taper-size) 0;
+    
+    
+  }
+  &__content-inner{
+padding: 60px 0;
+  }
+  
+  // Taper modifiers with clip-path
+  &--taper-both-right {
+    clip-path: polygon(0 0 , 100% var(--taper-size), 100% calc(100% - var(--taper-size)), 0 100%);
+    margin-top: var(--taper-margin);
+    margin-bottom: var(--taper-margin);
+  }
+  
+  &--taper-both-left {
+    clip-path: polygon(0% var(--taper-size) , 100% 0%, 100% 100%, 0% calc(100% - var(--taper-size)) );
+    margin-top: var(--taper-margin);
+    margin-bottom: var(--taper-margin);
+  }
+  
+  &--taper-top-right {
+    clip-path: polygon(0% 0%, 100% var(--taper-size), 100% 100%, 0% 100%);
+    margin-top: var(--taper-margin);
+  }
+  
+  &--taper-top-left {
+    clip-path: polygon(0% var(--taper-size) , 100% 0%, 100% 100%, 0% 100%);
+    margin-top: var(--taper-margin);
+  }
+  
+  &--taper-none {
+    clip-path: none;
+  }
+}
+
+
+
+

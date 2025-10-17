@@ -16,7 +16,7 @@
 1. Confirm the shared design system tokens, typography, and spacing rules are defined so the component can consume them consistently.
 2. Map the HTML structure and required data.
 3. Create the `.astro` file under `src/components/prod/`.
-4. Follow the standard wrapper classes with "sus-" prefix (`sus-page-sec`, `sus-container`, `sus-sec`).
+4. Follow the standard wrapper classes with "sus-" prefix (`sus-page-sec-v2`, `sus-container`, `sus-sec`).
 5. Hook up SCSS and JavaScript if needed.
 6. Surface the component on a sustainability page for verification.
 
@@ -25,11 +25,11 @@
 ---
 const { variant } = Astro.props;
 ---
-<section class="sus-page-sec sus-page-sec--bg-white sus-page-sec--component-name">
+<SusSectionV2 background="white" taper="none">
   <div class="sus-component-name sus-sec">
     
     <!-- Centered header (if needed) -->
-    <div class="sus-container-sec-header">
+    <div class="sus-container-wide">
       <div class="sus-component-name__header">
         <h2 class="sus-component-name__title">Title</h2>
         <p class="sus-component-name__subtitle">Subtitle</p>
@@ -44,17 +44,19 @@ const { variant } = Astro.props;
     </div>
     
   </div>
-</section>
+</SusSectionV2>
 ```
 
 Replace `component-name` with the kebab-case slug for your component. All classes must be prefixed with "sus-" to prevent style leakage.
 
-**Background Control:** Use `sus-page-sec--bg-white` or `sus-page-sec--bg-gray` modifiers on the `sus-page-sec` wrapper to control section backgrounds. These sustainability-specific modifiers are defined in `src/scss/layout/_section.scss`.
+**Background Control:** Use the `background` prop on `SusSectionV2` component to control section backgrounds. Available options: `"primary"`, `"pink"`, `"orange"`, `"green"`, `"yellow"`, `"image"`.
 
-**Container Rule:** NEVER nest containers! Use `.sus-container-sec-header` for centered headers (630px max-width) and `.sus-container` for content. They should be siblings, not nested.
+**Taper Control:** Use the `taper` prop to add diagonal borders. Available options: `"both-right"`, `"both-left"`, `"top-right"`, `"top-left"`, `"none"`.
+
+**Container Rule:** NEVER nest containers! Use `.sus-container-wide` for centered headers and `.sus-container` for content. They should be siblings, not nested.
 
 ## Checklist
-- Uses the `sus-page-sec`, `sus-container`, `sus-sec`, and `sus-sec__content` structure.
+- Uses the `SusSectionV2` component with `sus-container`, `sus-sec`, and `sus-sec__content` structure.
 - Class names follow BEM with "sus-" prefix (`sus-component-name`, `sus-component-name__element`, `sus-component-name--modifier`).
 - Props typed via the frontmatter `Astro.props` object when needed.
 - No inline `<style>` or `<script>` blocks; use SCSS modules and JS modules instead.

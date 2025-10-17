@@ -4,3 +4,8 @@
     box-sizing: border-box;
 }
 
+hr {
+  border: 1px solid var(--sus-color-primary);
+  margin: 20rem 0;
+  // display: none;
+}

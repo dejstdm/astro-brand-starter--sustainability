@@ -1,0 +1,33 @@
+---
+// SusSectionV2.astro - Section wrapper component with background colors and diagonal borders using clip-path
+
+export interface Props {
+  background?: "primary" | "pink" | "orange" | "green" | "yellow" | "image";
+  taper?: "both-right" | "both-left" | "top-right" | "top-left" | "none";
+  zIndex?: 10 | 20 | 30 | 40 | 50 | 60 | 70 | 80 | 90 | 100;
+  className?: string;
+}
+
+const {
+  background = "primary",
+  taper = "none",
+  zIndex,
+  className = "",
+} = Astro.props;
+
+// Only use zIndex if explicitly provided
+const finalZIndex = zIndex;
+---
+
+<section
+  class={`sus-page-sec-v2 sus-page-sec-v2--bg-${background} sus-page-sec-v2--taper-${taper} ${className}`}
+  style={finalZIndex ? `z-index: ${finalZIndex};` : ""}
+>
+  <!-- Section content -->
+  <div class="sus-page-sec-v2__content">
+    <div class="sus-page-sec-v2__content-inner">
+
+      <slot />
+      </div>
+  </div>
+</section>

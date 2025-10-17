@@ -1,0 +1,133 @@
+---
+import ProdLayout from '../../layouts/ProdLayout.astro';
+import SusSectionV2 from '../../components/prod/SusSectionV2.astro';
+
+// Section configurations for testing V2 component
+const sections: Array<{
+  id: number;
+  title: string;
+  description: string;
+  background: "primary" | "pink" | "orange" | "green" | "yellow" | "image";
+  taper: "both-right" | "both-left" | "top-right" | "top-left" | "none";
+  textColor: string;
+  zIndex?: 10 | 20 | 30 | 40 | 50 | 60 | 70 | 80 | 90 | 100;
+}> = [
+  {
+    id: 1,
+    title: "Image Background",
+    description: "Sky image background with no taper",
+    background: "image",
+    taper: "none",
+    textColor: "white"
+  },
+  {
+    id: 2,
+    title: "Orange Background",
+    description: "Orange section with both-left taper",
+    background: "orange",
+    taper: "both-left",
+    textColor: "white"
+  },
+  {
+    id: 3,
+    title: "Blue Background",
+    description: "Primary blue section with both-right taper",
+    background: "primary",
+    taper: "both-right",
+    textColor: "white"
+  },
+  {
+    id: 4,
+    title: "Green Background",
+    description: "Green section with top-left taper",
+    background: "green",
+    taper: "both-left",
+    textColor: "white"
+  },
+  {
+    id: 5,
+    title: "Pink Background",
+    description: "Pink section with top-right taper",
+    background: "pink",
+    taper: "both-right",
+    textColor: "white"
+  },
+  {
+    id: 6,
+    title: "Image Background",
+    description: "Another sky image background with both-left taper",
+    background: "image",
+    taper: "both-left",
+    textColor: "white"
+  },
+  {
+    id: 7,
+    title: "Blue Background",
+    description: "Primary blue section with top-right taper",
+    background: "primary",
+    taper: "both-right",
+    textColor: "white"
+  },
+  {
+    id: 8,
+    title: "Yellow Background",
+    description: "Yellow section with both-right taper",
+    background: "yellow",
+    taper: "both-left",
+    textColor: "var(--sus-color-primary)"
+  },
+  {
+    id: 9,
+    title: "Image Background",
+    description: "Final sky image background with top-left taper",
+    background: "image",
+    taper: "top-right",
+    textColor: "white"
+  }
+];
+---
+
+<ProdLayout title="Sections Demo V2 - Clip-Path">
+  <main style="background-color: #000;">
+    {sections.map((section, index) => (
+      <>
+        <SusSectionV2 
+          background={section.background}
+          taper={section.taper}
+          zIndex={section.zIndex}
+        >
+          <div class="sus-container">
+            <h1 style={`color: ${section.textColor}; margin-bottom: 20px;`}>
+              Section {section.id}: {section.title}
+            </h1>
+            <p style={`color: ${section.textColor};`}>
+              {section.description}
+            </p>
+            <div style={`color: ${section.textColor}; font-size: 14px; margin-top: 20px; opacity: 0.8;`}>
+              <strong>Config:</strong> 
+              <ul style="list-style: none; padding: 0; margin: 0; text-align: left;">
+                <li>Background: {section.background}</li>
+                <li>Taper: {section.taper}</li>
+                <li>Z-index: {section.zIndex || 'not set'}</li>
+                <li>Method: clip-path</li>
+              </ul>
+            </div>
+          </div>
+        </SusSectionV2>
+      </>
+    ))}
+  </main>
+</ProdLayout>
+
+<style>
+  /* Override section heights to be smaller for testing */
+  .sus-page-sec-v2 {
+    min-height: 400px;
+  }
+  
+  @media (min-width: 768px) {
+    .sus-page-sec-v2 {
+      min-height: 600px;
+    }
+  }
+</style>

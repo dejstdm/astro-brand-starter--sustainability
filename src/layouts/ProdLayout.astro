@@ -10,7 +10,23 @@ import '../scss/main.scss';
     <title>{title}</title>
   </head>
   <body class="sus-body">
-    <slot />
+    <!-- Navigation for development -->
+    <nav class="sus-nav" style="position: fixed; top: 0; left: 0; right: 0; background: rgba(0,0,0,0.9); color: white; padding: 10px; z-index: 9999; font-size: 14px;">
+      <div class="sus-container" style="display: flex; flex-wrap: wrap; gap: 15px; align-items: center;">
+        <strong style="color: #ffd700;">Lipton Sustainability - Dev Navigation</strong>
+        <a href="/" style="color: #fff; text-decoration: none; padding: 5px 10px; border-radius: 3px; background: #333;">Home</a>
+        <a href="/dev/component-list" style="color: #fff; text-decoration: none; padding: 5px 10px; border-radius: 3px; background: #333;">Component List</a>
+        <a href="/dev/section-demo" style="color: #fff; text-decoration: none; padding: 5px 10px; border-radius: 3px; background: #333;">Basic Demo</a>
+        <a href="/dev/sections-demo-initiatives-1" style="color: #fff; text-decoration: none; padding: 5px 10px; border-radius: 3px; background: #333;">Advanced Demo</a>
+        <a href="/dev/sections-demo-v2" style="color: #fff; text-decoration: none; padding: 5px 10px; border-radius: 3px; background: #333;">V2 Demo</a>
+        <a href="/prod/homepage" style="color: #fff; text-decoration: none; padding: 5px 10px; border-radius: 3px; background: #0066cc;">Production</a>
+      </div>
+    </nav>
+    
+    <!-- Add top padding to account for fixed nav -->
+    <div style="padding-top: 60px;">
+      <slot />
+    </div>
    
   </body>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js" integrity="sha512-Ysw1DcK1P+uYLqprEAzNQJP+J4hTx4t/3X2nbVwszao8wD+9afLjBQYjz7Uk4ADP+Er++mJoScI42ueGtQOzEA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
