@@ -1,0 +1,54 @@
+---
+import SusSectionV2 from './SusSectionV2.astro';
+
+export interface Props {
+  variant?: 'landing' | 'origin' | 'initiatives-1' | 'initiatives-2';
+}
+
+const { variant = 'landing' } = Astro.props;
+---
+
+<SusSectionV2 background="primary" taper="none">
+  <div class={`sus-hero sus-hero--${variant}`}>
+    
+    {variant === 'landing' && (
+      <div class="sus-hero__content">
+        
+        <div class="sus-hero__bg">
+          <img src="/images/bg-sky 2.webp" alt="" class="sus-hero__bg-image" />
+        </div>
+
+        <div class="sus-hero__circle">
+          <div class="sus-hero__circle-inner">
+            <div class="sus-hero__headlines">
+              <img 
+                src="/images/REFRESHINGLY-RESPONSIBLE.png" 
+                alt="Refreshingly Responsible" 
+                class="sus-hero__headline-image"
+              />
+              <h1 class="sus-hero__tagline">THERE'S A TASTY MOUTHFUL</h1>
+            </div>
+          </div>
+        </div>
+
+        <div class="sus-hero__leaves">
+          <img 
+            src="/images/deco-leaves-1.webp" 
+            alt="" 
+            class="sus-hero__leaf"
+          />
+        </div>
+
+        <div class="sus-hero__hand">
+          <img 
+            src="/images/sus-landing-hero.png" 
+            alt="Lipton Ice Tea Bottle" 
+            class="sus-hero__hand-image"
+          />
+        </div>
+
+      </div>
+    )}
+
+  </div>
+</SusSectionV2>
