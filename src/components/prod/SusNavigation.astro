@@ -1,0 +1,61 @@
+---
+import SusSectionV2 from './SusSectionV2.astro';
+import SusButton from './SusButton.astro';
+
+export interface Props {
+  variant?: 'default';
+}
+
+const { variant = 'default' } = Astro.props;
+---
+
+<SusSectionV2 background="primary" taper="top-right">
+  <div class="sus-navigation sus-sec">
+    
+    <div class="sus-container">
+      <div class="sus-navigation__content sus-sec__content">
+        
+        <div class="sus-navigation__header">
+          <div class="sus-navigation__headlines">
+            <h2 class="sus-navigation__headline-top">do you know how</h2>
+            <img 
+              src="/images/how-responsible-2.png" 
+              alt="Responsible" 
+              class="sus-navigation__headline-image"
+            />
+            <h2 class="sus-navigation__headline-bottom">we are?</h2>
+          </div>
+          <p class="sus-navigation__subtitle">
+            From our ingredients to our people and resources, we owe mother nature E V E R Y T H I N G.
+          </p>
+        </div>
+
+        <div class="sus-navigation__cta">
+          <h3 class="sus-navigation__cta-title">FIND OUT MORE</h3>
+          <div class="sus-button-group">
+            <SusButton 
+              variant="secondary" 
+              text="origin" 
+              icon="origin-btn-icon.png"
+              href="/prod/origin"
+            />
+            <SusButton 
+              variant="secondary" 
+              text="initiatives" 
+              icon="initiatives-btn-icon.png"
+              href="/prod/initiatives-1"
+            />
+            <SusButton 
+              variant="secondary" 
+              text="packaging" 
+              icon="packaging-btn-icon.png"
+              href="/prod/packaging"
+            />
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</SusSectionV2>
