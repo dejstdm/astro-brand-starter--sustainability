@@ -94,6 +94,16 @@ padding: 60px 0;
     margin-top: var(--taper-margin);
   }
   
+  &--taper-bottom-right {
+    clip-path: polygon(0% 0%, 100% 0%, 100% calc(100% - var(--taper-size)), 0% 100%);
+    margin-bottom: var(--taper-margin);
+  }
+  
+  &--taper-bottom-left {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% calc(100% - var(--taper-size)));
+    margin-bottom: var(--taper-margin);
+  }
+  
   &--taper-none {
     clip-path: none;
   }

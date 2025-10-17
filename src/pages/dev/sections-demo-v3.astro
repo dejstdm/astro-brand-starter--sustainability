@@ -1,0 +1,334 @@
+---
+// sections-demo-v3.astro - Complete taper variations demo with proper positioning rules
+import ProdLayout from '../../layouts/ProdLayout.astro';
+import SusSectionV2 from '../../components/prod/SusSectionV2.astro';
+
+// Complete taper variations with proper positioning rules
+const sections: Array<{
+  id: number;
+  title: string;
+  description: string;
+  background: "primary" | "pink" | "orange" | "green" | "yellow" | "image";
+  taper: "both-right" | "both-left" | "top-right" | "top-left" | "bottom-right" | "bottom-left" | "none";
+  textColor: string;
+  positioningRule?: string;
+  category: "foundation" | "top-taper" | "bottom-taper" | "both-taper" | "image-demo" | "rules";
+  className?: string;
+}> = [
+  {
+    id: 1,
+    title: "None Taper",
+    description: "Base section with no taper - used as foundation for other sections",
+    background: "pink",
+    taper: "none",
+    textColor: "white",
+    category: "foundation"
+  },
+  {
+    id: 2,
+    title: "Top Right Taper",
+    description: "This section can only be placed ON TOP of sections with 'none' taper",
+    background: "orange",
+    taper: "top-right",
+    textColor: "white",
+    positioningRule: "Can only be placed ON TOP of sections with taper='none'",
+    category: "top-taper"
+  },
+  {
+    id: 3,
+    title: "Top Left Taper",
+    description: "This section can only be placed ON TOP of sections with 'none' taper",
+    background: "green",
+    taper: "top-left",
+    textColor: "white",
+    positioningRule: "Can only be placed ON TOP of sections with taper='none'",
+    category: "top-taper"
+  },
+  {
+    id: 4,
+    title: "None Taper (Foundation)",
+    description: "This section serves as foundation for bottom tapers below",
+    background: "yellow",
+    taper: "none",
+    textColor: "var(--sus-color-primary)",
+    category: "foundation"
+  },
+  {
+    id: 5,
+    title: "Bottom Right Taper",
+    description: "This section can only be placed BELOW sections with 'none' taper",
+    background: "primary",
+    taper: "bottom-right",
+    textColor: "white",
+    positioningRule: "Can only be placed BELOW sections with taper='none'",
+    category: "bottom-taper"
+  },
+  {
+    id: 6,
+    title: "Bottom Left Taper",
+    description: "This section can only be placed BELOW sections with 'none' taper",
+    background: "pink",
+    taper: "bottom-left",
+    textColor: "white",
+    positioningRule: "Can only be placed BELOW sections with taper='none'",
+    category: "bottom-taper"
+  },
+  {
+    id: 7,
+    title: "Both Right Taper",
+    description: "This section has tapers on both top and bottom - can be used anywhere",
+    background: "orange",
+    taper: "both-right",
+    textColor: "white",
+    positioningRule: "Can be used anywhere as it has tapers on both ends",
+    category: "both-taper"
+  },
+  {
+    id: 8,
+    title: "Both Left Taper",
+    description: "This section has tapers on both top and bottom - can be used anywhere",
+    background: "green",
+    taper: "both-left",
+    textColor: "white",
+    positioningRule: "Can be used anywhere as it has tapers on both ends",
+    category: "both-taper",
+    className:'XXXXXXXXX'
+  }
+];
+
+// Positioning rules data
+const positioningRules = [
+  {
+    category: "Top Tapers",
+    tapers: "top-right & top-left",
+    rule: "Can only be placed ON TOP of sections with taper='none'"
+  },
+  {
+    category: "Bottom Tapers",
+    tapers: "bottom-right & bottom-left", 
+    rule: "Can only be placed BELOW sections with taper='none'"
+  },
+  {
+    category: "Both Tapers",
+    tapers: "both-right & both-left",
+    rule: "Can be used anywhere as they have tapers on both ends"
+  },
+  {
+    category: "None Taper",
+    tapers: "none",
+    rule: "Foundation sections that allow other tapers to connect to them"
+  }
+];
+---
+
+<ProdLayout title="Section Taper Variations Demo v3">
+  <main class="demo-page" style="background-color: #000;">
+    
+    <!-- Demo Header -->
+    <SusSectionV2 background="primary" taper="none">
+      <div class="demo-header">
+        <h1>Section Taper Variations Demo v3</h1>
+        <p>Complete showcase of all taper options with proper positioning rules</p>
+      </div>
+    </SusSectionV2>
+
+    <!-- Dynamic Sections -->
+    {sections.map((section) => (
+      <SusSectionV2 
+        background={section.background}
+        taper={section.taper}
+        className={section.className}
+      >
+        <div class="sus-container">
+          <div class="demo-section">
+            <h2 style={`color: ${section.textColor};`}>
+              Section {section.id}: {section.title}
+            </h2>
+            <p style={`color: ${section.textColor};`}>
+              {section.description}
+            </p>
+            
+            {section.positioningRule && (
+              <div class="positioning-rule" style={`color: ${section.textColor};`}>
+                <strong>Positioning Rule:</strong> {section.positioningRule}
+              </div>
+            )}
+            
+            <div class="section-config" style={`color: ${section.textColor};`}>
+              <strong>Config:</strong> 
+              <ul>
+                <li>Background: {section.background}</li>
+                <li>Taper: {section.taper}</li>
+                <li>Category: {section.category}</li>
+                {section.className && <li>ClassName: {section.className}</li>}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </SusSectionV2>
+    ))}
+
+    <!-- Positioning Rules Summary -->
+    <SusSectionV2 background="primary" taper="none">
+      <div class="sus-container">
+        <div class="demo-rules">
+          <h2>Positioning Rules Summary</h2>
+          <div class="rules-grid">
+            {positioningRules.map((rule) => (
+              <div class="rule-item">
+                <h3>{rule.category}</h3>
+                <p><code>{rule.tapers}</code></p>
+                <p>{rule.rule}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </SusSectionV2>
+
+  </main>
+</ProdLayout>
+
+<style>
+  /* Override section heights to be smaller for testing */
+  .sus-page-sec-v2 {
+    min-height: 400px;
+  }
+  
+  @media (min-width: 768px) {
+    .sus-page-sec-v2 {
+      min-height: 600px;
+    }
+  }
+
+  .demo-page {
+    min-height: 100vh;
+  }
+
+  .demo-header {
+    text-align: center;
+    padding: 40px 20px;
+    color: white;
+  }
+
+  .demo-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+  }
+
+  .demo-header p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+  }
+
+  .demo-section {
+    text-align: center;
+    padding: 60px 20px;
+  }
+
+  .demo-section h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+  }
+
+  .demo-section p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    max-width: 600px;
+    margin: 0 auto 1rem;
+  }
+
+  .positioning-rule {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1rem;
+    border-radius: 8px;
+    margin: 1rem 0;
+    font-size: 0.9rem;
+  }
+
+  .section-config {
+    font-size: 14px;
+    margin-top: 20px;
+    opacity: 0.8;
+    text-align: left;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .section-config ul {
+    list-style: none;
+    padding: 0;
+    margin: 0.5rem 0;
+  }
+
+  .section-config li {
+    padding: 0.2rem 0;
+  }
+
+  .demo-rules {
+    padding: 60px 20px;
+    color: white;
+  }
+
+  .demo-rules h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    font-weight: bold;
+  }
+
+  .rules-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .rule-item {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 8px;
+    backdrop-filter: blur(10px);
+  }
+
+  .rule-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #fff;
+  }
+
+  .rule-item p {
+    margin-bottom: 0.5rem;
+    opacity: 0.9;
+  }
+
+  .rule-item code {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    font-family: 'Courier New', monospace;
+  }
+
+  @media (max-width: 768px) {
+    .demo-header h1 {
+      font-size: 2rem;
+    }
+
+    .demo-section h2 {
+      font-size: 1.5rem;
+    }
+
+    .rules-grid {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+
+    .rule-item {
+      padding: 1.5rem;
+    }
+  }
+</style>
