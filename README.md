@@ -1,43 +1,56 @@
-# Astro Brand Starter
+# Lipton Sustainability Pages
 
-This template delivers production-ready Astro, SCSS, and JavaScript for brand websites. Use it to assemble components that can be copied into other platforms after build. Project conventions and detailed workflows are documented in the `AGENTS.md` files throughout the repo.
+## Purpose
+This project delivers 4 production-ready Lipton Sustainability pages with isolated styling and components. All sustainability-specific components use the "sus" prefix to prevent style leakage into the main Lipton site. The repository is focused exclusively on sustainability components; development demos and example content have been removed.
 
-## Project Structure
-- `src/components/prod/` – Production-ready Astro components
-- `src/pages/prod/` – Production routes
-- `src/layouts/ProdLayout.astro` – Shared layout that loads global styles and scripts
-- `src/scss/` – SCSS architecture (base, layout, components, utils)
-- `src/scripts/modules/` – JavaScript modules for production components
-- `public/` – Static assets copied as-is to the build output
+## Quick Start
+- Install dependencies: `npm install`
+- Start the dev server: `npm run dev` (default: http://localhost:4321)
+- Build for production: `npm run build` (outputs to `dist/`)
+- Preview the build: `npm run preview`
+- Run other Astro commands: `npm run astro <command>`
 
-## Commands
-| Command             | Action                                             |
-| ------------------- | -------------------------------------------------- |
-| `npm install`       | Install dependencies                               |
-| `npm run dev`       | Start the local dev server at http://localhost:4321 |
-| `npm run build`     | Build the production site to `dist/`               |
-| `npm run preview`   | Preview the production build locally               |
-| `npm run astro ...` | Run additional Astro CLI commands                  |
+## Source Layout
+```
+src/
+|- components/
+|  |- prod/            # Sustainability components (all prefixed with "sus")
+|- layouts/
+|  |- ProdLayout.astro # Shared layout for sustainability pages
+|- pages/
+|  |- index.astro      # Entry page that points to sustainability content
+|  |- prod/
+|     |- homepage.astro
+|     |- [3 more sustainability pages]
+|- scss/
+|  |- base/
+|  |- components/      # Sustainability component styles (sus-* prefixed)
+|  |- layout/
+|  |- utils/
+|- scripts/
+|  |- modules/         # Sustainability-specific JavaScript modules
+public/
+|- images/             # All Figma exports go directly here
+dist/
+```
 
-## Recommended Workflow
-1. `npm install`
-2. `npm run dev`
-3. Create or update components in `src/components/prod/`
-4. Add SCSS and JS modules as needed, following the guidance in `src/scss/AGENTS.md`
-5. Surface components on pages in `src/pages/prod/` and verify behaviour
-6. Run `npm run build` to confirm the project compiles cleanly
+## Workflow
+1. Establish the sustainability design system first by defining tokens in `src/scss/utils/_variables.scss` and aligning base styles in `src/scss/base/` and `src/scss/layout/`.
+2. Build the Astro component inside `src/components/prod/` with "sus" prefix (e.g., `SusHero.astro`), referencing the shared design system tokens.
+3. Add or update SCSS in `src/scss/components/` with "sus-" prefixed classes and ensure it is imported by `src/scss/main.scss`.
+4. Wire any interactivity in `src/scripts/modules/` and expose it through `src/scripts/functions.js`.
+5. Surface the component on one of the 4 sustainability pages within `src/pages/prod/` and verify accessibility, responsiveness, and cross-browser behaviour.
+6. Run `npm run build` and copy assets from `dist/` when integrating with the main Lipton site.
 
-## Component Testing
-- Render components directly within production pages during development.
-- If you need ad-hoc review, create a temporary route inside `src/pages/prod/` and remove it before shipping.
-- There is no separate dev or example component library in this starter.
+## Documentation Map
+- Component workflow: `src/components/AGENTS.md`
+- SCSS structure and tokens: `src/scss/AGENTS.md`
+- Production pages and site assembly: `src/pages/prod/AGENTS.md`
 
-## Using the Output
-- After building, copy the generated HTML, CSS, and JS from `dist/` into your downstream platform (e.g., a CMS theme).
-- Reuse the design tokens defined in `src/scss/utils/_variables.scss` to keep styling consistent.
-
-## Additional Resources
-- [Astro Documentation](https://docs.astro.build)
-- [Astro Discord](https://astro.build/chat)
-- [Cursor Rules Tutorial](https://www.youtube.com/watch?v=FpJ48a5S5lU)
-
+## Principles
+- Component-driven, production-first implementation for Lipton Sustainability
+- Single source of truth for design tokens in `scss/utils`
+- Mobile-first, accessible BEM-based styling with "sus-" prefix isolation
+- No dev or example components; only files that ship to production belong in the repository
+- All sustainability components and styles are prefixed to prevent leakage into main Lipton site
+- Components may include multiple options/variants to mimic backend behavior
