@@ -1,0 +1,39 @@
+---
+import ProdLayout from "../../layouts/ProdLayout.astro";
+import SusSectionV2 from "../../components/prod/SusSectionV2.astro";
+import SusMediaHighlight from "../../components/prod/SusMediaHighlight.astro";
+---
+
+<ProdLayout title="Media Highlight - Dev">
+  <div class="sus-body">
+    <div style="padding: 2rem; background: white;">
+      <div class="sus-container">
+        <h1 style="font-family: var(--sus-font-primary); font-size: 32px; margin-bottom: 1rem;">
+          SusMediaHighlight Component Demo
+        </h1>
+        <p style="font-family: var(--sus-font-primary); font-size: 16px; margin-bottom: 2rem;">
+          This page demonstrates the 3 variants of the SusMediaHighlight component: Sri Lanka, Round & Round, and Recycle.
+        </p>
+      </div>
+    </div>
+
+    <div class="sus-section-list">
+      
+      <!-- Variant 1: Sri Lanka -->
+      <SusSectionV2 background="pink" taper="both-right">
+        <SusMediaHighlight variant="sri-lanka" />
+      </SusSectionV2>
+
+      <!-- Variant 2: Round & Round -->
+      <SusSectionV2 background="orange" taper="both-left">
+        <SusMediaHighlight variant="round" />
+      </SusSectionV2>
+
+      <!-- Variant 3: Recycle -->
+      <SusSectionV2 background="primary" taper="both-right">
+        <SusMediaHighlight variant="recycle" />
+      </SusSectionV2>
+
+    </div>
+  </div>
+</ProdLayout>
