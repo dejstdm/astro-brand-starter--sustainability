@@ -1,0 +1,373 @@
+@use "../utils/variables" as *;
+
+.sus-media-highlight {
+  position: relative;
+  width: 100%;
+  padding: 55px 0 80px;
+
+  @media (min-width: $md) {
+    padding: 65px 0 90px;
+  }
+
+  @media (min-width: $lg) {
+    padding: 75px 0 100px;
+  }
+}
+
+.sus-media-highlight__content {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+
+  @media (min-width: $md) {
+    gap: 50px;
+  }
+
+  @media (min-width: $lg) {
+    gap: 60px;
+  }
+}
+
+.sus-media-highlight__header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+
+  &--centered {
+    text-align: center;
+  }
+}
+
+.sus-media-highlight__title {
+  color: var(--sus-color-white);
+  text-align: center;
+  font-family: var(--sus-font-primary);
+  font-size: 36px;
+  font-weight: var(--sus-font-weight-black);
+  line-height: 100%;
+  margin: 0;
+
+  @media (min-width: $sm) {
+    font-size: 42px;
+  }
+
+  @media (min-width: $md) {
+    font-size: 48px;
+  }
+
+  @media (min-width: $lg) {
+    font-size: 55px;
+  }
+}
+
+.sus-media-highlight__title-image {
+  width: auto;
+  height: auto;
+  max-width: 280px;
+
+  @media (min-width: $sm) {
+    max-width: 320px;
+  }
+
+  @media (min-width: $md) {
+    max-width: 335px;
+  }
+
+  &--small {
+    max-width: 160px;
+
+    @media (min-width: $sm) {
+      max-width: 185px;
+    }
+
+    @media (min-width: $md) {
+      max-width: 207px;
+    }
+  }
+}
+
+.sus-media-highlight__main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+
+  @media (min-width: $md) {
+    flex-direction: row;
+    gap: 40px;
+  }
+
+  @media (min-width: $lg) {
+    gap: 50px;
+  }
+
+  &--centered {
+    justify-content: center;
+  }
+}
+
+.sus-media-highlight__media {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 100%;
+
+  @media (min-width: $md) {
+    max-width: 520px;
+  }
+}
+
+.sus-media-highlight__text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  max-width: 100%;
+
+  @media (min-width: $md) {
+    max-width: 520px;
+  }
+}
+
+.sus-media-highlight__body {
+  color: var(--sus-color-white);
+  font-family: var(--sus-font-primary);
+  font-size: 16px;
+  font-weight: var(--sus-font-weight-bold);
+  line-height: 150%;
+  margin: 0;
+
+  @media (min-width: $md) {
+    font-size: 17px;
+  }
+
+  @media (min-width: $lg) {
+    font-size: 18px;
+  }
+}
+
+.sus-media-highlight__headline {
+  color: var(--sus-color-white);
+  font-family: var(--sus-font-primary);
+  font-size: 32px;
+  font-weight: var(--sus-font-weight-black);
+  line-height: 100%;
+  margin: 0;
+
+  @media (min-width: $sm) {
+    font-size: 36px;
+  }
+
+  @media (min-width: $md) {
+    font-size: 38px;
+  }
+
+  @media (min-width: $lg) {
+    font-size: 42px;
+  }
+}
+
+.sus-media-highlight__footnote {
+  color: var(--sus-color-white);
+  font-family: var(--sus-font-primary);
+  font-size: 11px;
+  font-weight: var(--sus-font-weight-regular);
+  line-height: 150%;
+  margin: 0;
+
+  @media (min-width: $md) {
+    font-size: 12px;
+  }
+}
+
+.sus-media-highlight__heart-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  aspect-ratio: 520 / 520;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media (min-width: $md) {
+    max-width: 480px;
+  }
+
+  @media (min-width: $lg) {
+    max-width: 520px;
+  }
+}
+
+.sus-media-highlight__heart-wiggles {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 520 / 457;
+  top: 6%;
+  left: 0;
+  z-index: 3;
+}
+
+.sus-media-highlight__heart-yellow {
+  position: absolute;
+  width: 84%;
+  height: auto;
+  aspect-ratio: 437 / 414;
+  top: 3.5%;
+  left: 11%;
+  z-index: 2;
+
+  svg {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.sus-media-highlight__heart-pattern {
+  position: absolute;
+  width: 84%;
+  height: auto;
+  aspect-ratio: 439 / 409;
+  top: 8%;
+  left: 0.5%;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.sus-media-highlight__heart-overlay {
+  position: absolute;
+  width: 106%;
+  height: 102%;
+  background-color: var(--sus-color-primary);
+  top: -0.5%;
+  left: 0;
+  z-index: 1;
+}
+
+.sus-media-highlight__heart-image {
+  position: absolute;
+  width: 126%;
+  height: auto;
+  aspect-ratio: 654 / 436;
+  top: 6%;
+  left: -13.5%;
+  z-index: 10;
+  overflow: visible;
+  clip-path: url(#heartClip);
+
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+}
+
+.sus-media-highlight__decoration {
+  position: absolute;
+  right: -50px;
+  top: 55px;
+  width: 150px;
+  height: auto;
+  z-index: 5;
+
+  @media (min-width: $md) {
+    right: -30px;
+    width: 180px;
+  }
+
+  @media (min-width: $lg) {
+    right: 0;
+    width: 200px;
+  }
+
+  @media (min-width: $xl) {
+    right: 50px;
+    width: 240px;
+  }
+}
+
+.sus-media-highlight__leaf {
+  width: 100%;
+  height: auto;
+  transform: rotate(-20deg);
+}
+
+.sus-media-highlight__circle {
+  position: relative;
+  width: 100%;
+  max-width: 350px;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media (min-width: $sm) {
+    max-width: 400px;
+  }
+
+  @media (min-width: $md) {
+    max-width: 450px;
+  }
+
+  @media (min-width: $lg) {
+    max-width: 472px;
+  }
+}
+
+.sus-media-highlight__circle-bg {
+  position: relative;
+  width: 46%;
+  height: auto;
+  z-index: 2;
+  aspect-ratio: 218 / 218;
+}
+
+.sus-media-highlight__circle-decoration {
+  position: absolute;
+  width: 90%;
+  height: auto;
+  aspect-ratio: 422 / 486;
+  top: -3.5%;
+  left: -2%;
+  transform: rotate(-10deg);
+  z-index: 1;
+}
+
+.sus-media-highlight__recycle-logo {
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+
+  @media (min-width: $md) {
+    max-width: 480px;
+  }
+
+  @media (min-width: $lg) {
+    max-width: 520px;
+  }
+}
+
+.sus-media-highlight--sri-lanka {
+  .sus-media-highlight__content {
+    position: relative;
+  }
+}
+
+.sus-media-highlight--round {
+  .sus-media-highlight__main {
+    flex-direction: column;
+  }
+}
+
+.sus-media-highlight--recycle {
+  .sus-media-highlight__main {
+    @media (max-width: $md - 1) {
+      flex-direction: column;
+    }
+  }
+}
