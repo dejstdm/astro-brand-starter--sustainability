@@ -14,7 +14,7 @@ src/scss/
 |  |- _typography.scss    // Typography scale
 |- layout/
 |  |- _container.scss     // Container widths and spacing (NEVER nest containers!)
-|  |- _section.scss       // Section wrappers
+|  |- _section-v2.scss    // Section wrappers with automatic alternating tapers
 |- components/            // Component stylesheets will be added here
 |- utils/
 |  |- _variables.scss     // Design tokens and mixins
@@ -27,6 +27,33 @@ src/scss/
 - **`.sus-container`** - Default container (950px inner width + 20px padding on each side)
 - **`.sus-container-wide`** - Wide container (1080px inner width + 20px padding on each side)  
 - **`.sus-container-full`** - Full container (full width, no padding)
+
+## Section V2 Rules
+**SusSectionV2** provides section wrappers with automatic alternating diagonal tapers. The taper system is handled automatically when sections are wrapped in `.sus-section-list`:
+
+### Section V2 Structure
+- **`.sus-page-sec-v2`** - Base section wrapper with responsive taper variables
+- **`.sus-section-list`** - Container that enables automatic alternating tapers
+- **`.sus-page-sec-v2__header`** - Centered header area for title/subtitle
+- **`.sus-page-sec-v2__content`** - Main content area with taper padding
+- **`.sus-page-sec-v2__content-inner`** - Inner content wrapper with standard padding
+
+### Background Modifiers
+- **`.sus-page-sec-v2--bg-primary`** - Primary brand color background
+- **`.sus-page-sec-v2--bg-pink`** - Pink background variant
+- **`.sus-page-sec-v2--bg-orange`** - Orange background variant
+- **`.sus-page-sec-v2--bg-green`** - Green background variant
+- **`.sus-page-sec-v2--bg-yellow`** - Yellow background variant
+- **`.sus-page-sec-v2--bg-white`** - White background variant
+- **`.sus-page-sec-v2--bg-image`** - Background image with sky texture
+
+### Automatic Taper System
+When sections are placed inside `.sus-section-list`:
+- **Odd sections** (1st, 3rd, 5th...) get right-side tapers
+- **Even sections** (2nd, 4th, 6th...) get left-side tapers
+- **First section** gets bottom-right taper only
+- **Last section** gets proper bottom margin
+- Taper sizes are responsive: 10px mobile, 20px tablet, 50px desktop
 
 ## Import Order
 `main.scss` must load utilities first, then base, layout, and finally components:
@@ -42,7 +69,7 @@ src/scss/
 
 // LAYOUT
 @use "./layout/container";
-@use "./layout/section";
+@use "./layout/section-v2";
 
 // COMPONENTS
 // Component stylesheets will be imported here as they are created
