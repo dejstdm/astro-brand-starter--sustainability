@@ -3,10 +3,31 @@ import ProdLayout from "../../layouts/ProdLayout.astro";
 import SusHero from "../../components/prod/SusHero.astro";
 import SusNavigation from "../../components/prod/SusNavigation.astro";
 import SusHighlight from "../../components/prod/SusHighlight.astro";
+import SusSectionV2 from "../../components/prod/SusSectionV2.astro";
 ---
 
 <ProdLayout title="Lipton Sustainability - Home">
-  <SusHero variant="landing" />
-  <SusNavigation />
-  <SusHighlight />
+  <main class="sus-section-list" style="background-color: #000;">
+  <SusSectionV2 background="image"  className="sus-hero-section">
+
+    <SusHero 
+      variant="landing"
+      titleImageSrc="/images/REFRESHINGLY-RESPONSIBLE.png"
+      titleImageAlt="Refreshingly Responsible"
+      tagline="THERE'S A TASTY MOUTHFUL"
+      leavesImageSrc="/images/deco-leaves-1.webp"
+      handImageSrc="/images/sus-landing-hero.png"
+      handImageAlt="Lipton Ice Tea Bottle"
+      
+      />
+      <!-- bgImageSrc="/images/bg-sky 2.webp" -->
+  </SusSectionV2>
+    <SusSectionV2 background="primary" taper="both-left">
+        <SusNavigation />
+    </SusSectionV2>
+    <SusSectionV2 background="primary" taper="top-right" className="sus-highlight-section">
+    <SusHighlight />
+    </SusSectionV2>
+    </main>
+    <div class="footer-placeholder"></div>
 </ProdLayout>

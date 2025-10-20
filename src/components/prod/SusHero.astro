@@ -1,49 +1,84 @@
 ---
-import SusSectionV2 from './SusSectionV2.astro';
+
 
 export interface Props {
   variant?: 'landing' | 'origin' | 'initiatives-1' | 'initiatives-2';
+  // Title can be provided as text or image (image takes precedence when both provided)
+  titleText?: string;
+  titleImageSrc?: string;
+  titleImageAlt?: string;
+
+  // Optional tagline below the title
+  tagline?: string;
+
+  // Asset sources for the landing variant (externalized to page-level)
+  bgImageSrc?: string;
+  bgImageAlt?: string;
+  leavesImageSrc?: string;
+  handImageSrc?: string;
+  handImageAlt?: string;
 }
 
-const { variant = 'landing' } = Astro.props;
+const {
+  variant = 'landing',
+  titleText,
+  titleImageSrc = '/images/REFRESHINGLY-RESPONSIBLE.png',
+  titleImageAlt = 'Refreshingly Responsible',
+  tagline = "THERE'S A TASTY MOUTHFUL",
+  bgImageSrc = '/images/bg-sky 2.webp',
+  bgImageAlt = '',
+  leavesImageSrc = '/images/deco-leaves-1.webp',
+  handImageSrc = '/images/sus-landing-hero.png',
+  handImageAlt = 'Lipton Ice Tea Bottle',
+} = Astro.props as Props;
 ---
 
-<SusSectionV2 background="primary" taper="none">
+
   <div class={`sus-hero sus-hero--${variant}`}>
     
     {variant === 'landing' && (
       <div class="sus-hero__content">
         
-        <div class="sus-hero__bg">
-          <img src="/images/bg-sky 2.webp" alt="" class="sus-hero__bg-image" />
-        </div>
+        {/* <div class="sus-hero__bg">
+          <img src={bgImageSrc} alt={bgImageAlt} class="sus-hero__bg-image" />
+        </div> */}
 
         <div class="sus-hero__circle">
-          <div class="sus-hero__circle-inner">
+          <picture>
+            <source srcset="/images/lipton-sun.webp" media="(min-width: 768px)">
+            <source srcset="/images/lipton-sun-mob.webp" media="(max-width: 767px)">
+            <img src="/images/lipton-sun.webp" alt="Sun" class="sus-hero__sun">
+          </picture>
+        
             <div class="sus-hero__headlines">
-              <img 
-                src="/images/REFRESHINGLY-RESPONSIBLE.png" 
-                alt="Refreshingly Responsible" 
-                class="sus-hero__headline-image"
-              />
-              <h1 class="sus-hero__tagline">THERE'S A TASTY MOUTHFUL</h1>
+              {titleImageSrc ? (
+                <img 
+                  src={titleImageSrc} 
+                  alt={titleImageAlt}
+                  class="sus-hero__headline-image"
+                />
+              ) : titleText ? (
+                <h1 class="sus-hero__headline">{titleText}</h1>
+              ) : null}
+              {tagline && <h2 class="sus-hero__tagline">{tagline}</h2>}
             </div>
-          </div>
+          {/* <div class="sus-hero__circle-inner">
+          </div> */}
         </div>
 
-        <div class="sus-hero__leaves">
+        <div class="sus-hero__leaf-1">
           <img 
-            src="/images/deco-leaves-1.webp" 
+            src={leavesImageSrc}
             alt="" 
-            class="sus-hero__leaf"
+           
           />
         </div>
 
         <div class="sus-hero__hand">
           <img 
-            src="/images/sus-landing-hero.png" 
-            alt="Lipton Ice Tea Bottle" 
-            class="sus-hero__hand-image"
+            src={handImageSrc}
+            alt={handImageAlt}
+            
           />
         </div>
 
@@ -51,4 +86,4 @@ const { variant = 'landing' } = Astro.props;
     )}
 
   </div>
-</SusSectionV2>
+

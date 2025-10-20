@@ -122,7 +122,7 @@ const positioningRules = [
 ---
 
 <ProdLayout title="Section Taper Variations Demo v3">
-  <main class="demo-page" style="background-color: #000;">
+  <main class="sus-section-list" style="background-color: #000;">
     
     <!-- Demo Header -->
     <SusSectionV2 background="primary" taper="none">
@@ -166,30 +166,31 @@ const positioningRules = [
           </div>
         </div>
       </SusSectionV2>
+<SusSectionV2 background="primary" taper="none">
+  <div class="sus-container">
+    <div class="demo-rules">
+      <h2>Positioning Rules Summary</h2>
+      <div class="rules-grid">
+        {positioningRules.map((rule) => (
+          <div class="rule-item">
+            <h3>{rule.category}</h3>
+            <p><code>{rule.tapers}</code></p>
+            <p>{rule.rule}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</SusSectionV2>
     ))}
 
-    <!-- Positioning Rules Summary -->
-    <SusSectionV2 background="primary" taper="none">
-      <div class="sus-container">
-        <div class="demo-rules">
-          <h2>Positioning Rules Summary</h2>
-          <div class="rules-grid">
-            {positioningRules.map((rule) => (
-              <div class="rule-item">
-                <h3>{rule.category}</h3>
-                <p><code>{rule.tapers}</code></p>
-                <p>{rule.rule}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-    </SusSectionV2>
-
-  </main>
+</main>
+<div class="footer-placeholder"></div>
+<!-- Positioning Rules Summary -->
 </ProdLayout>
 
 <style>
+ 
   /* Override section heights to be smaller for testing */
   .sus-page-sec-v2 {
     min-height: 400px;

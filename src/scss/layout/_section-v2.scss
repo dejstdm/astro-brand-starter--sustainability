@@ -17,7 +17,87 @@
     --taper-margin: -50px;
     --taper-size: 50px;
   }
+  
+  
+  
+  
+  &__header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    max-width: 640px;
+    margin: 0 auto;
+    margin-bottom: 40px;
+    @media (min-width: $md) {
+      margin-bottom: 60px;
+      gap: 16px;
+    }
+  }
+  
+  &__title {
+    color: var(--sus-color-white);
+    text-align: center;
+    font-family: var(--sus-font-primary);
+    font-weight: var(--sus-font-weight-black);
+    line-height: 1;
+    margin: 0;
+    padding: 0;
+    font-size: 28px;
+    text-transform: uppercase;
+    
+    @media (min-width: $sm) {
+      font-size: 36px;
+    }
+    
+    @media (min-width: $md) {
+      font-size: 44px;
+    }
+    
+    @media (min-width: $lg) {
+      font-size: 50px;
+    }
+    
+    @media (min-width: $xl) {
+      font-size: 55px;
+    }
 
+    strong{
+      font-family: var(    --sus-font-highlight);
+      display: block;
+
+      margin-bottom: .2em;
+    }
+  }
+  
+  &__subtitle {
+    color: var(--sus-color-white);
+    text-align: center;
+    font-family: var(--sus-font-primary);
+    font-weight: var(--sus-font-weight-semibold);
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    max-width: 100%;
+    
+    @media (min-width: $sm) {
+      font-size: 16px;
+      
+    }
+    
+    @media (min-width: $md) {
+      font-size: 17px;
+     
+    }
+    
+    @media (min-width: $lg) {
+      font-size: 18px;
+      
+    }
+  }
+  
   
   // Background colors
   &--bg-primary {
@@ -55,10 +135,10 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-   
+    
     --sus-border-color: transparent;
   }
-   
+  
   
   // Content area
   &__content {
@@ -68,47 +148,77 @@
     
   }
   &__content-inner{
-padding: 60px 0;
+    padding: 60px 0;
   }
+  
+
   
   // Taper modifiers with clip-path
-  &--taper-both-right {
-    clip-path: polygon(0 0 , 100% var(--taper-size), 100% calc(100% - var(--taper-size)), 0 100%);
-    margin-top: var(--taper-margin);
-    margin-bottom: var(--taper-margin);
-  }
+  // &--taper-both-right {
+  //   clip-path: polygon(0 0 , 100% var(--taper-size), 100% calc(100% - var(--taper-size)), 0 100%);
+  //   margin-top: var(--taper-margin);
+  //   margin-bottom: var(--taper-margin);
+  // }
   
-  &--taper-both-left {
-    clip-path: polygon(0% var(--taper-size) , 100% 0%, 100% 100%, 0% calc(100% - var(--taper-size)) );
-    margin-top: var(--taper-margin);
-    margin-bottom: var(--taper-margin);
-  }
+  // &--taper-both-left {
+  //   clip-path: polygon(0% var(--taper-size) , 100% 0%, 100% 100%, 0% calc(100% - var(--taper-size)) );
+  //   margin-top: var(--taper-margin);
+  //   margin-bottom: var(--taper-margin);
+  // }
   
-  &--taper-top-right {
-    clip-path: polygon(0% 0%, 100% var(--taper-size), 100% 100%, 0% 100%);
-    margin-top: var(--taper-margin);
-  }
+  // &--taper-top-right {
+  //   clip-path: polygon(0% 0%, 100% var(--taper-size), 100% 100%, 0% 100%);
+  //   margin-top: var(--taper-margin);
+  // }
   
-  &--taper-top-left {
-    clip-path: polygon(0% var(--taper-size) , 100% 0%, 100% 100%, 0% 100%);
-    margin-top: var(--taper-margin);
-  }
+  // &--taper-top-left {
+  //   clip-path: polygon(0% var(--taper-size) , 100% 0%, 100% 100%, 0% 100%);
+  //   margin-top: var(--taper-margin);
+  // }
   
-  &--taper-bottom-right {
-    clip-path: polygon(0% 0%, 100% 0%, 100% calc(100% - var(--taper-size)), 0% 100%);
-    margin-bottom: var(--taper-margin);
-  }
+  // &--taper-bottom-right {
+  //   clip-path: polygon(0% 0%, 100% 0%, 100% calc(100% - var(--taper-size)), 0% 100%);
+  //   margin-bottom: var(--taper-margin);
+  // }
   
-  &--taper-bottom-left {
-    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% calc(100% - var(--taper-size)));
-    margin-bottom: var(--taper-margin);
-  }
+  // &--taper-bottom-left {
+  //   clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% calc(100% - var(--taper-size)));
+  //   margin-bottom: var(--taper-margin);
+  // }
   
-  &--taper-none {
-    clip-path: none;
-  }
+  // &--taper-none {
+  //   clip-path: none;
+  // }
 }
 
 
 
 
+  // Tapers section list each section is tapered opposite to the previous section.
+  .sus-section-list{
+    .sus-page-sec-v2{
+      // background-color: red;
+      &:nth-child(odd){
+
+        
+        clip-path: polygon(0 0 , 100% var(--taper-size), 100% calc(100% - var(--taper-size)), 0 100%);
+        margin-top: var(--taper-margin);
+        margin-bottom: var(--taper-margin);
+        
+      }
+      &:nth-child(even){
+        
+        clip-path: polygon(0% var(--taper-size) , 100% 0%, 100% 100%, 0% calc(100% - var(--taper-size)) );
+        margin-top: var(--taper-margin);
+        margin-bottom: var(--taper-margin);
+        
+      }
+      &:first-child{
+        background-color: green;
+        clip-path: polygon(0% 0%, 100% 0%, 100% calc(100% - var(--taper-size)), 0% 100%);
+      }
+      &:last-child{
+        // margin-bottom:  calc(2 * var(--taper-margin));
+      }
+    }
+  }

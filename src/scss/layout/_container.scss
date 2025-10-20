@@ -23,6 +23,12 @@
   padding: 0 20px;
 }
 
+.sus-container-narrow {
+  max-width: var(--sus-container-narrow);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
 // Full container (full width, no padding)
 .sus-container-full {
   width: 100%;

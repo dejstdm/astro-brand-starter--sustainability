@@ -21,6 +21,7 @@ $xxl: 1400px;
 
 .sus-body {
     // Container Widths (total width including padding)
+    --sus-container-narrow: 680px; //640px inner + 40px padding
     --sus-container: 990px; // 950px inner + 40px padding
     --sus-container-wide: 1120px; // 1080px inner + 40px padding
     
