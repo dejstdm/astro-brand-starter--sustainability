@@ -189,6 +189,14 @@
   // &--taper-none {
   //   clip-path: none;
   // }
+  .wysiwyg-text{
+    p{
+
+    }
+    h3{
+
+    }
+  }
 }
 
 
@@ -214,7 +222,7 @@
         
       }
       &:first-child{
-        background-color: green;
+       
         clip-path: polygon(0% 0%, 100% 0%, 100% calc(100% - var(--taper-size)), 0% 100%);
       }
       &:last-child{

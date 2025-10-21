@@ -16,6 +16,7 @@ export interface Props {
   bgImageAlt?: string;
   leavesImageSrc?: string;
   handImageSrc?: string;
+  handImageMobSrc?: string;
   handImageAlt?: string;
 }
 
@@ -24,11 +25,12 @@ const {
   titleText,
   titleImageSrc = '/images/REFRESHINGLY-RESPONSIBLE.png',
   titleImageAlt = 'Refreshingly Responsible',
-  tagline = "THERE'S A TASTY MOUTHFUL",
+  tagline = "There's a tasty mouthful",
   bgImageSrc = '/images/bg-sky 2.webp',
   bgImageAlt = '',
   leavesImageSrc = '/images/deco-leaves-1.webp',
-  handImageSrc = '/images/sus-landing-hero.png',
+  handImageSrc = '/images/lit-sp-home-hero-desktop.png',
+  handImageMobSrc = '/images/lit-sp-home-hero-mobile.png',
   handImageAlt = 'Lipton Ice Tea Bottle',
 } = Astro.props as Props;
 ---
@@ -46,40 +48,49 @@ const {
         <div class="sus-hero__circle">
           <picture>
             <source srcset="/images/lipton-sun.webp" media="(min-width: 768px)">
-            <source srcset="/images/lipton-sun-mob.webp" media="(max-width: 767px)">
+            <source srcset="/images/lipton-sun-mob.webp" >
             <img src="/images/lipton-sun.webp" alt="Sun" class="sus-hero__sun">
           </picture>
         
             <div class="sus-hero__headlines">
-              {titleImageSrc ? (
-                <img 
-                  src={titleImageSrc} 
-                  alt={titleImageAlt}
-                  class="sus-hero__headline-image"
-                />
-              ) : titleText ? (
-                <h1 class="sus-hero__headline">{titleText}</h1>
-              ) : null}
+              {titleText && (
+                <h1 class="sus-hero__headline">
+                  {titleImageSrc ? (
+                    <>
+                      <img
+                        src={titleImageSrc}
+                        alt={titleImageAlt}
+                        class="sus-hero__headline-image"
+                      />
+                      <span class="sr-only">{titleText}</span>
+                    </>
+                  ) : (
+                    titleText
+                  )}
+                </h1>
+              )}
               {tagline && <h2 class="sus-hero__tagline">{tagline}</h2>}
             </div>
-          {/* <div class="sus-hero__circle-inner">
-          </div> */}
+         
         </div>
 
         <div class="sus-hero__leaf-1">
-          <img 
-            src={leavesImageSrc}
-            alt="" 
-           
-          />
+              <img 
+                src={leavesImageSrc}
+                alt="" 
+              
+              />
         </div>
 
         <div class="sus-hero__hand">
-          <img 
-            src={handImageSrc}
-            alt={handImageAlt}
-            
-          />
+          <picture>
+                <source srcset={handImageSrc} media="(min-width: 768px)">
+                <source srcset={handImageMobSrc} media="(max-width: 767px)">
+                <img 
+                  src={handImageMobSrc}
+                  alt={handImageAlt}
+                />
+              </picture>
         </div>
 
       </div>
