@@ -5,6 +5,7 @@ export interface Props {
   variant?: 'landing' | 'origin' | 'initiatives-1' | 'initiatives-2';
   // Title can be provided as text or image (image takes precedence when both provided)
   titleText?: string;
+  subtitleText?: string;
   titleImageSrc?: string;
   titleImageAlt?: string;
 
@@ -21,29 +22,26 @@ export interface Props {
 }
 
 const {
-  variant = 'landing',
+  variant,
   titleText,
-  titleImageSrc = '/images/REFRESHINGLY-RESPONSIBLE.png',
-  titleImageAlt = 'Refreshingly Responsible',
-  tagline = "There's a tasty mouthful",
+  subtitleText,
+  titleImageSrc ,
+  titleImageAlt ,
+  tagline ,
   bgImageSrc = '/images/bg-sky 2.webp',
-  bgImageAlt = '',
-  leavesImageSrc = '/images/deco-leaves-1.webp',
-  handImageSrc = '/images/lit-sp-home-hero-desktop.png',
-  handImageMobSrc = '/images/lit-sp-home-hero-mobile.png',
-  handImageAlt = 'Lipton Ice Tea Bottle',
+  bgImageAlt,
+  leavesImageSrc,
+  handImageSrc,
+  handImageMobSrc,
+  handImageAlt,
 } = Astro.props as Props;
 ---
 
 
   <div class={`sus-hero sus-hero--${variant}`}>
     
-    {variant === 'landing' && (
+    <!-- {variant === 'landing' && ( -->
       <div class="sus-hero__content">
-        
-        {/* <div class="sus-hero__bg">
-          <img src={bgImageSrc} alt={bgImageAlt} class="sus-hero__bg-image" />
-        </div> */}
 
         <div class="sus-hero__circle">
           <picture>
@@ -65,22 +63,26 @@ const {
                       <span class="sr-only">{titleText}</span>
                     </>
                   ) : (
-                    titleText
+                    // Need to display html tags
+                    <span set:html={titleText} />
                   )}
                 </h1>
               )}
-              {tagline && <h2 class="sus-hero__tagline">{tagline}</h2>}
+              {subtitleText && <h3 class="sus-hero__subtitle">{subtitleText}</h3>}
+              {tagline && <p class="sus-hero__tagline">{tagline}</p>}
             </div>
          
         </div>
 
-        <div class="sus-hero__leaf-1">
-              <img 
-                src={leavesImageSrc}
-                alt="" 
-              
-              />
-        </div>
+        {/* if leaf present, show it */}
+        {leavesImageSrc && (
+          <div class="sus-hero__leaf-1">
+            <img 
+              src={leavesImageSrc}
+              alt="" 
+            />
+          </div>
+        )}
 
         <div class="sus-hero__hand">
           <picture>
@@ -94,7 +96,7 @@ const {
         </div>
 
       </div>
-    )}
+    {/* )} */}
 
   </div>
 

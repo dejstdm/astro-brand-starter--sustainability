@@ -114,3 +114,42 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1;
 }
 
+.wysiwyg-text{
+  h2 {
+    
+    font-family: var(--sus-font-primary);
+    font-size: 36px; // Mobile: 36px
+    font-weight: 800;
+    line-height: 1;
+    
+    // Desktop override
+    @media (min-width: $md) {
+      font-size: 55px; // Desktop: 55px
+    }
+  }
+  
+  h3 {
+    font-family: var(--sus-font-primary);
+    font-size: 24px; // Mobile: 24px
+    font-weight: 800;
+    line-height: 1.2;
+    
+    // Desktop override
+    @media (min-width: $md) {
+      font-size: 42px; // Desktop: 42px
+      line-height: 1;
+    }
+  }
+  
+  h5 {
+    font-family: var(--sus-font-primary);
+    font-size: 24px; // Mobile: 24px
+    font-weight: 800;
+    line-height: 1.2;
+    
+    // Desktop override
+    @media (min-width: $md) {
+      font-size: 24px; // Desktop: 24px (same as mobile)
+    }
+  }
+}

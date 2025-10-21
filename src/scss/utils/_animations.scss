@@ -1,0 +1,43 @@
+// ==========================================================================
+// Animation Utilities for Lipton Sustainability Components
+// ==========================================================================
+
+// Leaf wiggle animation - gentle swaying motion like leaves on a breeze
+@keyframes leaf-wiggle {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(1deg);
+  }
+  75% {
+    transform: rotate(-1deg);
+  }
+}
+
+.leaf-wiggle {
+  // Container styles - no animation here
+}
+
+// Target the image inside the element for animation
+.leaf-wiggle img {
+  animation: leaf-wiggle 4s ease-in-out infinite;
+  transform-origin: center bottom; // Wiggle from the base of the leaf
+}
+
+// Optional: Slower, more subtle version for background elements
+.leaf-wiggle--slow img {
+  animation: leaf-wiggle 6s ease-in-out infinite;
+  transform-origin: center bottom;
+}
+
+// Optional: Faster, more pronounced version for accent elements
+.leaf-wiggle--fast img {
+  animation: leaf-wiggle 2.5s ease-in-out infinite;
+  transform-origin: center bottom;
+}
+
+// Optional: Pause animation on hover for better UX
+.leaf-wiggle--pause-on-hover:hover img {
+  animation-play-state: paused;
+}
