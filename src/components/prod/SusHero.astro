@@ -84,6 +84,15 @@ const {
           </div>
         )}
 
+<!-- if initiatives-1 versin, then second leaf decoration image is needed -->
+        {variant === 'initiatives-1' && (
+          <div class="sus-hero__leaf-2">
+            <img 
+              src="/images/deco-leaves-2.webp"
+              alt="" 
+            />
+          </div>
+        )}
         <div class="sus-hero__hand">
           <picture>
                 <source srcset={handImageSrc} media="(min-width: 768px)">

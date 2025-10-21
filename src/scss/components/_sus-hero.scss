@@ -1,4 +1,5 @@
 @use "../utils/variables" as *;
+@use "../utils/typography-mixins" as *;
 .sus-hero-section{
   --sun-size: 100vw;
   @media (min-width: $md) {
@@ -30,21 +31,6 @@
   }
 }
 
-.sus-hero__bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-}
-
-.sus-hero__bg-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-}
 
 .sus-hero__circle {
   width: 100%;
@@ -94,16 +80,8 @@
   
   // When no image is present, show the text
   &:not(:has(.sus-hero__headline-image)) {
-    
-    font-family: var(--sus-font-primary);
-    font-size: 36px;
-    font-weight: var(--sus-font-weight-black);
-    line-height: 1.1;
     text-align: center;
-    
-    @media (min-width: $md) {
-      font-size: 55px; 
-    }
+    @include sus-headline-2;
   }
   
   // When image is present, hide the text but keep it for screen readers
@@ -122,33 +100,19 @@
   z-index: 1;
 }
 .sus-hero__subtitle{
-
   color: var(--sus-color-primary);
   text-align: center;
-  font-family: var(--sus-font-primary);
-  font-size: 24px;
-  font-weight: var(--sus-font-weight-black);
-  line-height: 1;
   margin: 0;
   padding: 0;
   max-width: 60%;
   text-transform: uppercase;
-  @media (min-width: $md) {
-    font-size: 36px;
-  }
-  @media (min-width: $lg) {
-    font-size: 42px;
-  }
+  @include sus-headline-3;
 }
 .sus-hero__tagline {
+  @include sus-body-big;
   color: var(--sus-color-primary);
   text-align: center;
-  font-size: 18px;
-  
-  
-    margin: 0;
-  
-
+  margin: 0;
 }
 
 .sus-hero__leaf-1 {
@@ -160,7 +124,15 @@
     filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
   }
 }
-
+.sus-hero__leaf-2{
+  position: absolute;
+  img{
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+  }
+}
 .sus-hero__hand {
   max-width: 100%;
   position: relative;
@@ -200,5 +172,42 @@
   }
   .sus-hero__hand {
     margin-top: -8%;
+  }
+}
+.sus-hero--initiatives-1{
+  .sus-hero__circle{
+    z-index: 15;
+  }
+  .sus-hero__headlines{
+    @media (min-width: $md) {
+      padding: 0 154px;
+    }
+  }
+  .sus-hero__hand {
+    margin-top: -5%;
+  }
+  .sus-hero__leaf-1{
+    left: 5vw;
+    top: 85vw;
+    width: 20vw;
+    height: auto;
+    z-index: 16;
+    @media (min-width: $md) {
+      width: 130px;
+      left: 9%;
+      top: 29%;
+    }
+  }
+  .sus-hero__leaf-2{
+    right: 0;
+    bottom: 0;
+    width: 20vw;
+    height: auto;
+    z-index: 5;
+    @media (min-width: $md) {
+      width: 130px;
+      right: 0;
+      bottom: 0;
+    }
   }
 }

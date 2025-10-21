@@ -1,0 +1,75 @@
+---
+export interface Props {
+  variant?: 'rain' | 'water' | 'sustainability';
+  title?: string;
+  description?: string;
+  iconSrc?: string;
+  iconAlt?: string;
+  highlightText?: string;
+}
+
+const {
+  title,
+  description,
+  iconSrc,
+  iconAlt,
+  highlightText
+} = Astro.props as Props;
+
+// Determine if this should be single column layout
+const singleCol = !(iconSrc || highlightText);
+---
+
+{singleCol ? (
+  <!-- Single column layout -->
+  <div class="sus-info-block sus-sec sus-info-block--single-column">
+    <div class="sus-container-narrow">
+      <div class="sus-page-sec-v2__header">
+        <h2 class="sus-page-sec-v2__title ">
+          <span set:html={title} />
+        </h2>
+      </div>
+      <div class="sus-info-block__content">
+        <div class="sus-info-block__single-content">
+            <div class="wysiwyg-text">
+
+          <span set:html={description} />
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+) : (
+  <!-- Two column layout -->
+  <div class="sus-info-block sus-sec sus-info-block--two-column">
+    <div class="sus-container">
+      <div class="sus-info-block__content">
+        <div class="sus-info-block__wrapper">
+          
+          <!-- Text content -->
+          <div class="sus-info-block__text">
+            <div class="wysiwyg-text">
+              <span set:html={description} />
+            </div>
+          </div>
+
+          <!-- Icon and highlight section -->
+          <div class="sus-info-block__highlight">
+            <div class="sus-info-block__icon">
+              <img 
+                src={iconSrc}
+                alt={iconAlt}
+                class="sus-info-block__icon-image"
+              />
+            </div>
+            <div class="sus-info-block__highlight-text">
+              <div class="wysiwyg-text">
+                <span set:html={highlightText} />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+)}

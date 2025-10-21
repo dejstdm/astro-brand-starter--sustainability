@@ -1,0 +1,55 @@
+---
+import ProdLayout from "../../layouts/ProdLayout.astro";
+import SusHero from "../../components/prod/SusHero.astro";
+import SusSectionV2 from "../../components/prod/SusSectionV2.astro";
+import SusMediaHighlight from "../../components/prod/SusMediaHighlight.astro";
+import SusInfoBlock from "../../components/prod/SusInfoBlock.astro";
+---
+
+<ProdLayout title="Lipton Sustainability - Initiatives">
+    <main class="sus-section-list" style="background-color: #000;">
+        <SusSectionV2 background="image" className="sus-hero-section">
+            
+            <SusHero
+            variant="initiatives-1"
+            titleText="REGENERATION IS <br> <strong>RESPECT</strong>"
+            handImageSrc="/images/lit-sp-initiatives-hero-desktop.png"
+            handImageMobSrc="/images/lit-sp-initiatives-hero-mobile.png"
+            tagline="Every drop of our tea tells a story of patience, passion and generations of knowhow. We nurture nature from the ground up."
+           leavesImageSrc="/images/deco-leaves-3.webp"
+            />
+            
+        </SusSectionV2>
+        
+        <SusSectionV2 background="orange" className="sus-media-highlight-section">
+            <SusMediaHighlight
+            variant="round"
+            title="ROUND&ROUND <strong>we go </strong>"
+           
+            imageSrc="/images/lipton-logo.png"
+            imageAlt="Lipton logo"
+            />
+        </SusSectionV2>
+        
+        <SusSectionV2 background="primary" className="sus-info-block-section">
+            <SusInfoBlock
+               
+                description="<p>We believe in the 'give and take' principle. As we rely on Sri Lanka's precious natural resources, we do plenty in return. Such as collecting and reusing rainwater.</p><p> Generating steam to power our Ceytea factory and protecting the soil's eco-systems, using bio-fertiliser</p>"
+                iconSrc="/images/rain-icon.png"
+                iconAlt="Rain icon"
+                highlightText="<h4>WHEN IT RAINS IT'S STORED</h4>"
+            />
+        </SusSectionV2>
+      
+        
+        <SusSectionV2 background="pink" className="sus-info-block-section">
+            <SusInfoBlock
+               title="Sri Lanka has set a refreshingly sustainable new tea standard!"
+                description="<p>We believe in the 'give and take' principle. As we rely on Sri Lanka's precious natural resources, we do plenty in return. Such as collecting and reusing rainwater.</p><p> Generating steam to power our Ceytea factory and protecting the soil's eco-systems, using bio-fertiliser</p>"
+                
+            />
+        </SusSectionV2>
+        
+    </main>
+    <div class="footer-placeholder"></div>
+</ProdLayout>

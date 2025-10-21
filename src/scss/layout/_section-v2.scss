@@ -156,48 +156,12 @@
   
 
   
-  // Taper modifiers with clip-path
-  // &--taper-both-right {
-  //   clip-path: polygon(0 0 , 100% var(--taper-size), 100% calc(100% - var(--taper-size)), 0 100%);
-  //   margin-top: var(--taper-margin);
-  //   margin-bottom: var(--taper-margin);
-  // }
-  
-  // &--taper-both-left {
-  //   clip-path: polygon(0% var(--taper-size) , 100% 0%, 100% 100%, 0% calc(100% - var(--taper-size)) );
-  //   margin-top: var(--taper-margin);
-  //   margin-bottom: var(--taper-margin);
-  // }
-  
-  // &--taper-top-right {
-  //   clip-path: polygon(0% 0%, 100% var(--taper-size), 100% 100%, 0% 100%);
-  //   margin-top: var(--taper-margin);
-  // }
-  
-  // &--taper-top-left {
-  //   clip-path: polygon(0% var(--taper-size) , 100% 0%, 100% 100%, 0% 100%);
-  //   margin-top: var(--taper-margin);
-  // }
-  
-  // &--taper-bottom-right {
-  //   clip-path: polygon(0% 0%, 100% 0%, 100% calc(100% - var(--taper-size)), 0% 100%);
-  //   margin-bottom: var(--taper-margin);
-  // }
-  
-  // &--taper-bottom-left {
-  //   clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% calc(100% - var(--taper-size)));
-  //   margin-bottom: var(--taper-margin);
-  // }
-  
-  // &--taper-none {
-  //   clip-path: none;
-  // }
-  .wysiwyg-text{
-    p{
-
+  .wysiwyg-text {
+    p {
+      // WYSIWYG paragraph styles
     }
-    h3{
-
+    h3 {
+      // WYSIWYG heading styles
     }
   }
 }

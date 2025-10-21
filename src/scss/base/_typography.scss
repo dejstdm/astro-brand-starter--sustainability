@@ -2,6 +2,7 @@
 // Typography System (Based on Figma Design)
 // ==========================================================================
 @use "../utils/variables" as *;
+@use "../utils/typography-mixins" as *;
 
 // ==========================================================================
 // Base Typography
@@ -27,52 +28,19 @@ h1, h2, h3, h4, h5, h6 {
 
 // Mobile Headlines (Base styles)
 .sus-headline-1 {
-  font-family: var(--sus-font-primary);
-  font-size: 48px; // Mobile: 48px
-  font-weight: 800;
-  line-height: 1;
-  
-  // Desktop override
-  @media (min-width: $md) {
-    font-size: 72px; // Desktop: 72px
-  }
+  @include sus-headline-1;
 }
 
 .sus-headline-2 {
-  font-family: var(--sus-font-primary);
-  font-size: 36px; // Mobile: 36px
-  font-weight: 800;
-  line-height: 1;
-  
-  // Desktop override
-  @media (min-width: $md) {
-    font-size: 55px; // Desktop: 55px
-  }
+  @include sus-headline-2;
 }
 
 .sus-headline-3 {
-  font-family: var(--sus-font-primary);
-  font-size: 24px; // Mobile: 24px
-  font-weight: 800;
-  line-height: 1.2;
-  
-  // Desktop override
-  @media (min-width: $md) {
-    font-size: 42px; // Desktop: 42px
-    line-height: 1;
-  }
+  @include sus-headline-3;
 }
 
 .sus-headline-5 {
-  font-family: var(--sus-font-primary);
-  font-size: 24px; // Mobile: 24px
-  font-weight: 800;
-  line-height: 1.2;
-  
-  // Desktop override
-  @media (min-width: $md) {
-    font-size: 24px; // Desktop: 24px (same as mobile)
-  }
+  @include sus-headline-5;
 }
 
 // ==========================================================================
@@ -80,76 +48,43 @@ h1, h2, h3, h4, h5, h6 {
 // ==========================================================================
 
 .sus-body-big {
-  font-family: var(--sus-font-primary);
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 1.5;
+  @include sus-body-big;
 }
 
 .sus-body-regular {
-  font-family: var(--sus-font-primary);
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 1.5;
+  @include sus-body-regular;
 }
 
 .sus-body-big-highlight {
-  font-family: var(--sus-font-primary);
-  font-size: 18px;
-  font-weight: 700;
-  line-height: 1.5;
+  @include sus-body-big-highlight;
 }
 
 .sus-body-cta-big {
-  font-family: var(--sus-font-primary);
-  font-size: 21px;
-  font-weight: 800;
-  line-height: 1;
+  @include sus-body-cta-big;
 }
 
 .sus-body-label-big {
-  font-family: var(--sus-font-primary);
-  font-size: 18px;
-  font-weight: 800;
-  line-height: 1;
+  @include sus-body-label-big;
 }
 
+// ==========================================================================
+// Wysiwyg text styles
+// ==========================================================================
 .wysiwyg-text{
+  font-size: 18px;
+  p{
+    font-size: 18px;
+  }
   h2 {
-    
-    font-family: var(--sus-font-primary);
-    font-size: 36px; // Mobile: 36px
-    font-weight: 800;
-    line-height: 1;
-    
-    // Desktop override
-    @media (min-width: $md) {
-      font-size: 55px; // Desktop: 55px
-    }
+    @include sus-headline-2;
   }
   
   h3 {
-    font-family: var(--sus-font-primary);
-    font-size: 24px; // Mobile: 24px
-    font-weight: 800;
-    line-height: 1.2;
-    
-    // Desktop override
-    @media (min-width: $md) {
-      font-size: 42px; // Desktop: 42px
-      line-height: 1;
-    }
+    @include sus-headline-3;
   }
   
   h5 {
-    font-family: var(--sus-font-primary);
-    font-size: 24px; // Mobile: 24px
-    font-weight: 800;
-    line-height: 1.2;
-    
-    // Desktop override
-    @media (min-width: $md) {
-      font-size: 24px; // Desktop: 24px (same as mobile)
-    }
+    @include sus-headline-5;
   }
 }
+

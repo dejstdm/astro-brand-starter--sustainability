@@ -94,47 +94,6 @@
   }
 }
 
-// Secondary Button (Dark Purple background, White text)
-.sus-button--secondary {
-  background-color: var(--sus-color-primary);
-  color: var(--sus-color-white);
-  
-  .sus-button__text {
-    color: var(--sus-color-white);
-  }
-  
-  &:hover {
-    background-color: var(--sus-color-sky-blue);
-  }
-}
-
-// ==========================================================================
-// Button Sizes
-// ==========================================================================
-
-.sus-button--small {
-  height: 40px;
-  min-width: 200px;
-  padding: 12px 24px;
-  font-size: 18px;
-  
-  .sus-button__icon {
-    width: 32px;
-    height: 32px;
-  }
-}
-
-.sus-button--large {
-  height: 60px;
-  min-width: 320px;
-  padding: 20px 40px;
-  font-size: 24px;
-  
-  .sus-button__icon {
-    width: 48px;
-    height: 48px;
-  }
-}
 
 // ==========================================================================
 // Button States

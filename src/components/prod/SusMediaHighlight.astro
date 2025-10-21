@@ -32,26 +32,49 @@ const {
 
           <div class="sus-media-highlight__main">
             <div class="sus-media-highlight__media">
-            <img
-              src={imageSrc}
-              alt={imageAlt}
-            />
+              {variant === 'round' ? (
+                <div class="animation-round-wrapper">
+                  <img
+                    src={imageSrc}
+                    alt={imageAlt}
+                    class="base-img"
+                  />
+                  <div class="animation-round">
 
+                  <div class="animation-round-img" data-aos="round-scale-rotate-slow" data-aos-duration="1200">
+                    <img
+                      src="/images/round-and-round-lipton-logo.png"
+                      alt=""
+                    />
+                  </div>
+                  </div>
+                </div>
+              ) : (
+                <img
+                  src={imageSrc}
+                  alt={imageAlt}
+                />
+              )}
             </div>
 
-            <div class="sus-media-highlight__text">
-              <div class="sus-media-highlight__decoration leaf-wiggle--fast">
+            {description && (
+              <div class="sus-media-highlight__text">
+              <div class="sus-media-highlight__decoration leaf-wiggle">
                 <img
                   src="https://api.builder.io/api/v1/image/assets/TEMP/134898a547c90dcb6943b776fe67ea68917e4a4f?width=299"
                   alt=""
                   class="sus-media-highlight__leaf"
                 />
               </div>
+          
+
+               
               <div class="wysiwyg-text">
                 <span set:html={description} />
              
               </div>
             </div>
+             )}
           </div>
 
          

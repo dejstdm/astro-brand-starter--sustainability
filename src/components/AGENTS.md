@@ -19,7 +19,7 @@ This project creates 9 core sustainability sections that will be used across the
 8. **SusPartnership** - Partnership and collaboration showcase
 9. **SusVideoHighlight** - Video-focused section with embedded content
 
-Each section uses the `SusSectionV2` wrapper component and can have multiple variants/options to support different page layouts and content types.
+Each section can have multiple variants/options to support different page layouts and content types. Components are wrapped with `SusSectionV2` at the page level for background and taper control.
 
 ## Important Note About Figma Design
 The Figma design for this project is not created perfectly. Some things are overlooked:
@@ -44,50 +44,50 @@ The Figma design for this project is not created perfectly. Some things are over
 5. Hook up SCSS and JavaScript if needed.
 6. Surface the component on a sustainability page for verification.
 
-## Baseline Template
+## Component Template
 ```astro
 ---
 const { variant } = Astro.props;
 ---
-<SusSectionV2 background="white" taper="none">
-  <div class="sus-component-name sus-sec">
-    
-    <!-- Centered header (if needed) -->
-    <div class="sus-container-wide">
-      <div class="sus-component-name__header">
-        <h2 class="sus-component-name__title">Title</h2>
-        <p class="sus-component-name__subtitle">Subtitle</p>
-      </div>
+<div class={`sus-component-name sus-component-name--${variant} sus-sec`}>
+  
+  <div class="sus-container">
+    <div class="sus-component-name__content">
+      <!-- component content -->
     </div>
-
-    <!-- Main content -->
-    <div class="sus-container">
-      <div class="sus-component-name__content sus-sec__content">
-        <!-- component content -->
-      </div>
-    </div>
-    
   </div>
-</SusSectionV2>
+  
+</div>
 ```
 
 Replace `component-name` with the kebab-case slug for your component. All classes must be prefixed with "sus-" to prevent style leakage.
+
+## Page-Level Usage
+Components are wrapped with `SusSectionV2` at the page level:
+
+```astro
+<SusSectionV2 background="primary" className="sus-component-section">
+  <SusComponentName variant="rain" />
+</SusSectionV2>
+```
 
 **Background Control:** Use the `background` prop on `SusSectionV2` component to control section backgrounds. Available options: `"primary"`, `"pink"`, `"orange"`, `"green"`, `"yellow"`, `"image"`.
 
 **Taper Control:** Use the `taper` prop to add diagonal borders. Available options: `"both-right"`, `"both-left"`, `"top-right"`, `"top-left"`, `"none"`.
 
-**Container Rule:** NEVER nest containers! Use `.sus-container-wide` for centered headers and `.sus-container` for content. They should be siblings, not nested.
+**Container Rule:** NEVER nest containers! Use `.sus-container` for content. Components should not include `SusSectionV2` wrapper - that's handled at the page level.
 
 ## Checklist
-- Uses the `SusSectionV2` component with `sus-container`, `sus-sec`, and `sus-sec__content` structure.
-- Class names follow BEM with "sus-" prefix (`sus-component-name`, `sus-component-name__element`, `sus-component-name--modifier`).
-- Props typed via the frontmatter `Astro.props` object when needed.
-- No inline `<style>` or `<script>` blocks; use SCSS modules and JS modules instead.
-- Images load from `public/images/` (all images in root folder, no subdirectories).
-- All images are manually exported from Figma directly to `public/images/`.
-- Only use existing images from the `public/images/` folder - no external sources.
-- Component may include multiple variants/options to mimic backend behavior.
+- Component uses `sus-component-name` class with variant modifier and `sus-sec` class
+- Uses `sus-container` for proper layout (never nested)
+- Class names follow BEM with "sus-" prefix (`sus-component-name`, `sus-component-name__element`, `sus-component-name--modifier`)
+- Props typed via the frontmatter `Astro.props` object when needed
+- No inline `<style>` or `<script>` blocks; use SCSS modules and JS modules instead
+- Images load from `public/images/` (all images in root folder, no subdirectories)
+- All images are manually exported from Figma directly to `public/images/`
+- Only use existing images from the `public/images/` folder - no external sources
+- Component may include multiple variants/options to mimic backend behavior
+- **CRITICAL:** Do NOT include `SusSectionV2` wrapper inside components - that's handled at the page level
 
 ## Styling
 - Create the SCSS file under `src/scss/components/_sus-component-name.scss`.

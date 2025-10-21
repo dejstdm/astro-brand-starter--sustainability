@@ -7,6 +7,7 @@ import '../scss/main.scss';
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.css" integrity="sha512-pmAAV1X4Nh5jA9m+jcvwJXFQvCBi3T17aZ1KWkqXr7g/O2YMvO8rfaa5ETWDuBvRq6fbDjlw4jHL44jNTScaKg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
   <title>{title}</title>
 </head>
 <body class="sus-body">
@@ -21,6 +22,7 @@ import '../scss/main.scss';
       <a href="/dev/media-highlight-demo" style="color: #fff; text-decoration: none; padding: 5px 10px; border-radius: 3px; background: #333;">Media Highlight Demo</a>
       <a href="/prod/homepage" style="color: #fff; text-decoration: none; padding: 5px 10px; border-radius: 3px; background: #0066cc;">Homepage</a>
       <a href="/prod/origin" style="color: #fff; text-decoration: none; padding: 5px 10px; border-radius: 3px; background: #0066cc;">Origin</a>
+      <a href="/prod/initiatives-1" style="color: #fff; text-decoration: none; padding: 5px 10px; border-radius: 3px; background: #0066cc;">Initiatives-1</a>
     </div>
   </nav>
   
@@ -31,6 +33,23 @@ import '../scss/main.scss';
   
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js" integrity="sha512-Ysw1DcK1P+uYLqprEAzNQJP+J4hTx4t/3X2nbVwszao8wD+9afLjBQYjz7Uk4ADP+Er++mJoScI42ueGtQOzEA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+  // Initialize AOS after the script loads
+  window.addEventListener('load', function() {
+    if (typeof AOS !== 'undefined') {
+      AOS.init({
+        duration: 1200,
+        once: false, // Allow animation to repeat on scroll
+        offset: 100,
+        easing: 'ease-out-cubic'
+      });
+      console.log('✅ AOS initialized successfully');
+    } else {
+      console.error('❌ AOS library failed to load');
+    }
+  });
+</script>
 
 <script type="module" src="/src/scripts/functions.js" defer></script>
 

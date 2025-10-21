@@ -61,17 +61,6 @@
   }
 }
 
-.sus-highlight__content-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
-  width: 100%;
-
-  @media (min-width: $md) {
-    gap: 16px;
-  }
-}
 
 .sus-highlight__logo {
   width: 100%;

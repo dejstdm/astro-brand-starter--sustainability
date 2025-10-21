@@ -4,6 +4,7 @@
   position: relative;
   width: 100%;
   padding: 20px 0;
+  overflow: hidden; // Prevent any child elements from causing horizontal scroll
 
   @media (min-width: $md) {
     padding: 65px 0 90px;
@@ -12,7 +13,6 @@
   @media (min-width: $lg) {
     padding: 75px 0 100px;
   }
-  
 }
 
 .sus-media-highlight__content {
@@ -111,7 +111,8 @@
   gap: 16px;
   max-width: 100%;
   text-align: center;
-position: relative;
+  position: relative;
+  overflow: hidden; // Prevent decoration from causing horizontal scroll
   @media (min-width: $md) {
     max-width: 520px;
     text-align: left;
@@ -138,49 +139,7 @@ position: relative;
 .sus-media-highlight__leaf {
   width: 100%;
   height: auto;
-
 }
-.sus-media-highlight__body {
-  color: var(--sus-color-white);
-  font-family: var(--sus-font-primary);
-  font-size: 16px;
-  font-weight: var(--sus-font-weight-bold);
-  line-height: 150%;
-  margin: 0;
-
-  @media (min-width: $md) {
-    font-size: 17px;
-  }
-
-  @media (min-width: $lg) {
-    font-size: 18px;
-  }
-}
-
-.sus-media-highlight__headline {
-  color: var(--sus-color-white);
-  font-family: var(--sus-font-primary);
-  font-size: 32px;
-  font-weight: var(--sus-font-weight-black);
-  line-height: 100%;
-  margin: 0;
-
-  @media (min-width: $sm) {
-    font-size: 36px;
-  }
-
-  @media (min-width: $md) {
-    font-size: 38px;
-  }
-
-  @media (min-width: $lg) {
-    font-size: 42px;
-  }
-}
-
-
-
-
 
 
 
@@ -206,10 +165,40 @@ position: relative;
   .sus-media-highlight__main {
     
   }
-}
+  .animation-round-wrapper{
+    position: relative;
+    padding: 100px;
+    margin-top: 50px;
+    @media (min-width: $md) {
+      padding: 150px;
+    }
+    .base-img{
 
-.sus-media-highlight--recycle {
-  .sus-media-highlight__main {
-    
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: contain;
+      object-position: center;
+    }
+    .animation-round{
+      width: 100%;
+      position: absolute;
+      z-index: -1;
+      top: 50%;
+      left: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transform: translate(-50%, -50%);
+    }
+    .animation-round-img{
+      
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: contain;
+      object-position: center;
+    }
   }
 }
+

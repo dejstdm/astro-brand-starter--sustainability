@@ -1,0 +1,90 @@
+// ==========================================================================
+// Typography Mixins
+// ==========================================================================
+@use "variables" as *;
+
+// Headline Mixins
+@mixin sus-headline-1 {
+  font-family: var(--sus-font-primary);
+  font-size: 48px; // Mobile: 48px
+  font-weight: 800;
+  line-height: 1;
+  
+  // Desktop override
+  @media (min-width: $md) {
+    font-size: 72px; // Desktop: 72px
+  }
+}
+
+@mixin sus-headline-2 {
+  font-family: var(--sus-font-primary);
+  font-size: 36px; // Mobile: 36px
+  font-weight: 800;
+  line-height: 1;
+  
+  // Desktop override
+  @media (min-width: $md) {
+    font-size: 55px; // Desktop: 55px
+  }
+}
+
+@mixin sus-headline-3 {
+  font-family: var(--sus-font-primary);
+  font-size: 24px; // Mobile: 24px
+  font-weight: 800;
+  line-height: 1.2;
+  
+  // Desktop override
+  @media (min-width: $md) {
+    font-size: 42px; // Desktop: 42px
+    line-height: 1;
+  }
+}
+
+@mixin sus-headline-5 {
+  font-family: var(--sus-font-primary);
+  font-size: 24px; // Mobile: 24px
+  font-weight: 800;
+  line-height: 1.2;
+  
+  // Desktop override
+  @media (min-width: $md) {
+    font-size: 24px; // Desktop: 24px (same as mobile)
+  }
+}
+
+// Body Text Mixins
+@mixin sus-body-big {
+  font-family: var(--sus-font-primary);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+@mixin sus-body-regular {
+  font-family: var(--sus-font-primary);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+@mixin sus-body-big-highlight {
+  font-family: var(--sus-font-primary);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+@mixin sus-body-cta-big {
+  font-family: var(--sus-font-primary);
+  font-size: 21px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+@mixin sus-body-label-big {
+  font-family: var(--sus-font-primary);
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 1;
+}
