@@ -27,19 +27,19 @@ h1, h2, h3, h4, h5, h6 {
 // ==========================================================================
 
 // Mobile Headlines (Base styles)
-.sus-headline-1 {
+h1, .sus-headline-1 {
   @include sus-headline-1;
 }
 
-.sus-headline-2 {
+h2, .sus-headline-2 {
   @include sus-headline-2;
 }
 
-.sus-headline-3 {
+h3, .sus-headline-3 {
   @include sus-headline-3;
 }
 
-.sus-headline-5 {
+h5, .sus-headline-5 {
   @include sus-headline-5;
 }
 

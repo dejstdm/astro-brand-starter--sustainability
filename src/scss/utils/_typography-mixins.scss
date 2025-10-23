@@ -41,6 +41,15 @@
   }
 }
 
+@mixin sus-headline-4 {
+  font-family: var(--sus-font-primary);
+  font-size: 21px; // Mobile: 24px
+  font-weight: 800;
+  line-height: 1.2;
+  
+
+}
+
 @mixin sus-headline-5 {
   font-family: var(--sus-font-primary);
   font-size: 24px; // Mobile: 24px

@@ -1,0 +1,46 @@
+---
+export interface AchievementCard {
+    image: string;
+    text: string;
+    icon: string;
+}
+
+export interface Props {
+    title?: string;
+    achievements: AchievementCard[];
+}
+
+const {
+    title,
+    achievements = []
+} = Astro.props;
+---
+
+<div class="sus-achievements sus-sec">
+    <div class="sus-container-wide">
+        <div class="sus-page-sec-v2__header">
+            <h2 class="sus-page-sec-v2__title">
+                <span set:html={title} />
+            </h2>
+        </div>
+        <div class="sus-achievements__content">
+            {achievements.map((achievement) => (
+                <div class="sus-achievements__card">
+                    <div class="sus-achievements__card-image">   
+                        <img src={achievement.image} alt={achievement.text} />
+                    </div>
+                    <div class="sus-achievements__card-content">
+                        <div class="sus-achievements__card-content-icon">
+                            <img src={achievement.icon} alt={achievement.text} />
+                        </div>
+                        <div class="sus-achievements__card-content-text">
+                            {achievement.text}
+                        </div>
+                    </div>
+                     
+                </div>
+                ))}
+            </div>
+        </div>
+    </div>
+</div>

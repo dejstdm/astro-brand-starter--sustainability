@@ -4,6 +4,8 @@ import SusHero from "../../components/prod/SusHero.astro";
 import SusSectionV2 from "../../components/prod/SusSectionV2.astro";
 import SusMediaHighlight from "../../components/prod/SusMediaHighlight.astro";
 import SusInfoBlock from "../../components/prod/SusInfoBlock.astro";
+import SusProductHighlight from "../../components/prod/SusProductHighlight.astro";
+import SusAchievements from "../../components/prod/SusAchievements.astro";
 ---
 
 <ProdLayout title="Lipton Sustainability - Initiatives">
@@ -46,9 +48,28 @@ import SusInfoBlock from "../../components/prod/SusInfoBlock.astro";
             <SusInfoBlock
                title="Sri Lanka has set a refreshingly sustainable new tea standard!"
                 description="<p>We believe in the 'give and take' principle. As we rely on Sri Lanka's precious natural resources, we do plenty in return. Such as collecting and reusing rainwater.</p><p> Generating steam to power our Ceytea factory and protecting the soil's eco-systems, using bio-fertiliser</p>"
-                
             />
         </SusSectionV2>
+
+        <SusSectionV2 background="orange" className="sus-achievements-section">
+            <SusAchievements
+                title="A DECADE OF <strong>WINS AT CEYTEA</strong>"
+                achievements={[
+                    {
+                        image: "/images/lit-sp-wise-with-water-teaser.jpg",
+                        text: "WISE WITH WATER: 94% WATER EFFICIENCY",
+                        icon: "/images/drop-icon.png"
+                    },
+                    
+                    {
+                        image: "/images/lit-sp-biofertiliser-teaser.jpg",
+                        text: "turn tea waste into biofertiliser",
+                        icon: "/images/plant-icon.png"
+                    }
+                ]}
+            />
+        </SusSectionV2>
+       
         
     </main>
     <div class="footer-placeholder"></div>

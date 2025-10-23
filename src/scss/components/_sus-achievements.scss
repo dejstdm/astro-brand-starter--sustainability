@@ -1,0 +1,63 @@
+@use "../utils/variables" as *;
+@use "../utils/typography-mixins" as *;
+.sus-achievements{
+    &__content{
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        @media (min-width: $md) {
+            
+            gap: 60px;
+        }
+    }
+    &__card{
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        @media (min-width: $md) {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 40px;
+            align-items: center;
+            justify-items: center;
+        }
+        
+        img{
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+            object-position: center;
+        }
+    }
+
+    &__card-content{
+        display: grid;
+        grid-template-columns: 97px 1fr;
+        gap: 20px;
+        align-items: center;
+        justify-items: center;
+        color: var(--sus-color-white);
+        @include sus-headline-4;
+        text-transform: uppercase;
+        @media (min-width: $md) {
+            padding: 0 50px;
+        }
+    }
+    &__card-image{
+        img{
+            box-shadow: 8px 8px 0px 0px #fff;
+        }
+    }
+    .sus-achievements__card:nth-child(even) {
+        
+        @media (min-width: $md) {
+          .sus-achievements__card-content {
+            order: 1;
+          }
+          .sus-achievements__card-image {
+            order: 2;
+          }
+        }
+      }
+}

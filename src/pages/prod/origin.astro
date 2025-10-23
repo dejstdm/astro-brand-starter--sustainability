@@ -3,6 +3,7 @@ import ProdLayout from "../../layouts/ProdLayout.astro";
 import SusHero from "../../components/prod/SusHero.astro";
 import SusSectionV2 from "../../components/prod/SusSectionV2.astro";
 import SusMediaHighlight from "../../components/prod/SusMediaHighlight.astro";
+import SusProductHighlight from "../../components/prod/SusProductHighlight.astro";
 ---
 
 <ProdLayout title="Lipton Sustainability - Origin">
@@ -31,6 +32,15 @@ import SusMediaHighlight from "../../components/prod/SusMediaHighlight.astro";
         imageAlt="Lipton Ice Tea Bottle"
       />
     </SusSectionV2>
+    <SusSectionV2 background="image" className="sus-product-highlight-section">
+      <SusProductHighlight 
+      variant="initiatives-2"
+      title=" GROWS SLOW, <strong>REFRESHES FAST</strong>"
+      description="<p>Our tea leaves need lots of sunshine, a certain amount of rainfall, and expert tea pickers in order to be at their best. All you have to do is drink and enjoy.</p>"
+      imageSrc="/images/lit-sp-refresh-teaser.png"
+      imageAlt="Lipton logo"
+      />
+  </SusSectionV2>
     
   </main>
   <div class="footer-placeholder"></div>

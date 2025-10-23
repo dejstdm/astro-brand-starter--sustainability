@@ -1,0 +1,47 @@
+---
+export interface Props {
+    variant?: 'origin' | 'initiatives-2';
+    title?: string;
+    description?: string;
+    imageSrc?: string;
+    imageAlt?: string;
+}
+
+const {
+    variant,
+    title ,
+    description,
+    imageSrc,
+    imageAlt 
+} = Astro.props;
+---
+
+<div class="sus-product-highlight sus-sec">
+    
+    <div class="sus-container-narrow">
+        <div class="sus-product-highlight__header">
+            <h2 class="sus-product-highlight__title">
+                <span set:html={title} />
+            </h2>
+        </div>
+    </div>
+    <div class="sus-container">
+        <div class="sus-product-highlight__content">
+            
+            {variant === 'origin' ? (
+            <div class="sus-product-highlight__image animated-product ">
+                <img src={imageSrc} alt={imageAlt} />
+                <img src="/images/product-highlight-origin-1.png" alt="Product Highlight Origin" />
+            </div>
+            ) : (
+            <div class="sus-product-highlight__image">
+                <img src={imageSrc} alt={imageAlt} />
+            </div>
+            )}
+            <div class="sus-product-highlight__text">
+                <span set:html={description} />
+            </div>
+            
+        </div>
+    </div>
+</div>

@@ -1,0 +1,56 @@
+@use "../utils/variables" as *;
+@use "../utils/typography-mixins" as *;
+.sus-product-highlight-section{
+    &.sus-page-sec-v2--bg-image{
+        color: var(--sus-color-white);
+    }
+}
+
+.sus-product-highlight{
+    &__content{
+        @media (min-width: $md) {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 40px;
+            align-items: center;
+            justify-items: center;
+        }
+    }
+    &__header{
+        margin-bottom: 40px;
+        @media (min-width: $md) {
+            margin-bottom: 24px;
+        }
+    }
+    &__title{
+        text-align: center;
+        strong{
+            font-family: var(--sus-font-highlight);
+            display: block;
+        }
+    }
+    &__image{
+        width: 100%;
+        height: auto;
+        @media (min-width: $md) {
+            order: 2; // move image to second position
+        }
+        img{
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: contain;
+            object-position: center;
+        }
+    }
+    &__text{
+        width: 100%;
+        height: auto;
+        text-align: center;
+        @media (min-width: $md) {
+            order: 1; // move text to first position
+            text-align: left;
+        }
+        @include sus-body-big-highlight;
+    }
+}
