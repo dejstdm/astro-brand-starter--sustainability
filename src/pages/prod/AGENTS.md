@@ -15,18 +15,18 @@ The Figma design for this project is not created perfectly. Some things are over
 ## The 4 Sustainability Pages
 This project creates 4 specific sustainability pages:
 
-1. **Landing Page** (`landing.astro`) - Main sustainability homepage
+1. **Home Page** (`home.astro`) - Main sustainability homepage
 2. **Origin Page** (`origin.astro`) - Tea origin and sourcing information
-3. **Initiatives 1 Page** (`initiatives-1.astro`) - First set of sustainability initiatives
-4. **Initiatives 2 Page** (`initiatives-2.astro`) - Second set of sustainability initiatives
+3. **Initiatives Page** (`initiatives.astro`) - Sustainability initiatives
+4. **Packaging Page** (`packaging.astro`) - Packaging sustainability information
 
 ## Directory Snapshot
 ```
 src/pages/prod/
-|- landing.astro      // Main sustainability homepage
+|- home.astro         // Main sustainability homepage
 |- origin.astro       // Tea origin and sourcing
-|- initiatives-1.astro // First initiatives page
-|- initiatives-2.astro // Second initiatives page
+|- initiatives.astro  // Sustainability initiatives
+|- packaging.astro    // Packaging sustainability
 ```
 The root entry point `src/pages/index.astro` loads sustainability content as well; keep both files in sync so local previews and the exported build show the same experience.
 
@@ -38,8 +38,8 @@ The root entry point `src/pages/index.astro` loads sustainability content as wel
 ## Page Component Structure
 Each of the 4 sustainability pages follows this structure:
 
-**Landing Page Components:**
-- SusHero (variant: landing)
+**Home Page Components:**
+- SusHero (variant: home)
 - SusNavigation
 - SusHighlight
 
@@ -48,8 +48,8 @@ Each of the 4 sustainability pages follows this structure:
 - SusMediaHighlight
 - SusProductHighlight
 
-**Initiatives 1 Page Components:**
-- SusHero (variant: initiatives-1)
+**Initiatives Page Components:**
+- SusHero (variant: initiatives)
 - SusMediaHighlight
 - SusInfoBlock
 - SusAchievements
@@ -59,10 +59,9 @@ Each of the 4 sustainability pages follows this structure:
 - SusVideoHighlight
 - SusProductHighlight
 
-**Initiatives 2 Page Components:**
-- SusHero (variant: initiatives-2)
-- SusMediaHighlight
-- SusProductHighlight
+**Packaging Page Components:**
+- SusHero (variant: packaging)
+- [Additional components to be added later]
 
 
 ## Building a New Sustainability Page

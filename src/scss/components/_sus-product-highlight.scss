@@ -47,10 +47,10 @@
         width: 100%;
         height: auto;
         text-align: center;
+        @include sus-body-big-highlight;
         @media (min-width: $md) {
             order: 1; // move text to first position
             text-align: left;
         }
-        @include sus-body-big-highlight;
     }
 }

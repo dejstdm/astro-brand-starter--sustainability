@@ -20,8 +20,10 @@ src/
 |- pages/
 |  |- index.astro      # Entry page that points to sustainability content
 |  |- prod/
-|     |- homepage.astro
-|     |- [3 more sustainability pages]
+|     |- home.astro
+|     |- origin.astro
+     |- initiatives.astro
+     |- packaging.astro
 |- scss/
 |  |- base/
 |  |- components/      # Sustainability component styles (sus-* prefixed)

@@ -146,7 +146,7 @@
   }
 }
 
-.sus-hero--landing{
+.sus-hero--home{
   .sus-hero__hand {
     margin-top: -17%;
   }
@@ -174,7 +174,7 @@
     margin-top: -8%;
   }
 }
-.sus-hero--initiatives-1{
+.sus-hero--initiatives{
   .sus-hero__circle{
     z-index: 15;
   }
@@ -209,5 +209,16 @@
       right: 0;
       bottom: 0;
     }
+  }
+}
+
+.sus-hero--packaging{
+  .sus-hero__headlines{
+    @media (min-width: $md) {
+      padding: 0 154px;
+    }
+  }
+  .sus-hero__hand {
+    margin-top: -8%;
   }
 }

@@ -1,0 +1,27 @@
+---
+import ProdLayout from "../../layouts/ProdLayout.astro";
+import SusHero from "../../components/prod/SusHero.astro";
+import SusSectionV2 from "../../components/prod/SusSectionV2.astro";
+---
+
+<ProdLayout title="Lipton Sustainability - Packaging">
+  <main class="sus-section-list" style="background-color: #000;">
+    <SusSectionV2 background="image" className="sus-hero-section">
+      <SusHero
+        variant="packaging"
+        titleText="SUSTAINABLE <br> <strong>PACKAGING</strong>"
+        handImageSrc="/images/lit-sp-packaging-hero-desktop.png"
+        handImageMobSrc="/images/lit-sp-packaging-hero-mobile.png"
+        handImageAlt="Lipton Packaging"
+        tagline="Our commitment to sustainable packaging solutions that protect both our tea and our planet."
+      />
+    </SusSectionV2>
+    
+    <!-- Additional packaging content will be added later -->
+    <div style="padding: 100px 20px; text-align: center; color: white;">
+      <h2>Packaging Content</h2>
+      <p>Additional components will be added later</p>
+    </div>
+  </main>
+  <div class="footer-placeholder"></div>
+</ProdLayout>

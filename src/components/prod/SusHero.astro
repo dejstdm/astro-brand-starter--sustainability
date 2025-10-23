@@ -2,7 +2,7 @@
 
 
 export interface Props {
-  variant?: 'landing' | 'origin' | 'initiatives-1' | 'initiatives-2';
+  variant?: 'home' | 'origin' | 'initiatives' | 'packaging';
   // Title can be provided as text or image (image takes precedence when both provided)
   titleText?: string;
   subtitleText?: string;
@@ -84,8 +84,8 @@ const {
           </div>
         )}
 
-<!-- if initiatives-1 versin, then second leaf decoration image is needed -->
-        {variant === 'initiatives-1' && (
+<!-- if initiatives version, then second leaf decoration image is needed -->
+        {variant === 'initiatives' && (
           <div class="sus-hero__leaf-2">
             <img 
               src="/images/deco-leaves-2.webp"
